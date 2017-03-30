@@ -8,7 +8,15 @@ import (
 )
 
 func Action(c *cli.Context) {
-	limit, _ := strconv.Atoi(c.String("limit"))
+	limit := 200
+	climit, _ := strconv.Atoi(c.String("limit"))
+	if climit < 200 {
+		limit = climit
+	}
+	if limit < 10 {
+		limit = 10
+	}
+
 	b := client.Get(limit)
 	feed := NewFeed(b)
 

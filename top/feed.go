@@ -29,17 +29,17 @@ func (feed *Feed) AppList(keyword string) [](*App) {
 	entry := feed.Entry.([]interface{})
 
 	for i := 0; i < len(entry); i++ {
-			app := NewApp(entry[i], i)
+		app := NewApp(entry[i], i+1)
 
-			if keyword == "" {
-				applist = append(applist, app)
-				continue
-			}
-
-			if app.Contains(keyword) {
-				applist = append(applist, app)
-			}
+		if keyword == "" {
+			applist = append(applist, app)
+			continue
 		}
+
+		if app.Contains(keyword) {
+			applist = append(applist, app)
+		}
+	}
 
 	return applist
 }
