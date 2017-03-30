@@ -13,6 +13,6 @@ func Action(c *cli.Context) {
 	applist := feed.AppList("")
 
 	for _, app := range applist {
-      fmt.Println(app.ToString())
+      fmt.Println(app.String())
 	}
 }
