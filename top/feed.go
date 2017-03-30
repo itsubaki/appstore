@@ -28,7 +28,6 @@ func (feed *Feed) AppList(keyword string) [](*App) {
 	applist := [](*App){}
 	entry := feed.Entry.([]interface{})
 
-
 	for i := 0; i < len(entry); i++ {
 			app := NewApp(entry[i], i)
 

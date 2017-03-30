@@ -19,11 +19,11 @@ func NewApp(content interface{}, rank int) *App {
 
 func (app *App) String() string {
 	rank := strconv.Itoa(app.Rank)
+	appName := app.AppName()
 	bundleID := app.BundleID()
 	artist := app.ArtistName()
-	rights := app.Rights()
 
-	return rank + "(" + bundleID + ")" + " [" + artist + "/" + rights + "]"
+	return rank + ": " + appName + "(" + bundleID + ")" + " [" + artist + "]"
 }
 
 func (app *App) ArtistName() string {

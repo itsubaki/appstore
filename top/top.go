@@ -3,16 +3,23 @@ package top
 import (
 	"fmt"
 	"github.com/itsubaki/apst/client"
-
 	cli "gopkg.in/urfave/cli.v1"
+	"strconv"
 )
 
 func Action(c *cli.Context) {
-	b := client.Get(100)
+	limit, _ := strconv.Atoi(c.String("limit"))
+	b := client.Get(limit)
 	feed := NewFeed(b)
-	applist := feed.AppList("")
+
+	keyword := ""
+	if len(c.Args()) > 0 {
+		keyword = c.Args().Get(0)
+	}
+
+	applist := feed.AppList(keyword)
 
 	for _, app := range applist {
-      fmt.Println(app.String())
+		fmt.Println(app.String())
 	}
 }
