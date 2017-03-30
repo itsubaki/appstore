@@ -6,7 +6,7 @@ import (
 )
 
 func TestClientGet(t *testing.T) {
-	b := client.Get(1)
+	b := client.Get(10)
 	if b == nil {
 		t.Error("http get failed.")
 	}
