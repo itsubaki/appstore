@@ -24,7 +24,7 @@ func NewFeed(b []byte) *Feed {
 	return feed
 }
 
-func (feed *Feed) GetAppList(keyword string) [](*App) {
+func (feed *Feed) AppList(keyword string) [](*App) {
 	applist := [](*App){}
 	//	entry := feed.Entry.([]interface{})
 

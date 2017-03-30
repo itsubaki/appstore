@@ -10,7 +10,7 @@ import (
 func Action(c *cli.Context) {
 	b := client.Get(100)
 	feed := NewFeed(b)
-	applist := feed.GetAppList("")
+	applist := feed.AppList("")
 
 	for _, app := range applist {
       fmt.Println(app.ToString())
