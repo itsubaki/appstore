@@ -26,11 +26,11 @@ func NewFeed(b []byte) *Feed {
 
 func (feed *Feed) AppList(keyword string) [](*App) {
 	applist := [](*App){}
-	//	entry := feed.Entry.([]interface{})
+	entry := feed.Entry.([]interface{})
 
-	/*
-		for i := 0; i < len(entry.([]interface{})); i++ {
-			app := NewApp(entry.([]interface{})[i], i)
+
+	for i := 0; i < len(entry); i++ {
+			app := NewApp(entry[i], i)
 
 			if keyword == "" {
 				applist = append(applist, app)
@@ -40,7 +40,7 @@ func (feed *Feed) AppList(keyword string) [](*App) {
 			if app.Contains(keyword) {
 				applist = append(applist, app)
 			}
-		}*/
+		}
 
 	return applist
 }
