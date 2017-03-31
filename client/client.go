@@ -7,9 +7,17 @@ import (
 	"strconv"
 )
 
-func Get(limit int) []byte {
+func Review() {
+
+}
+
+func Ranking(limit int, feed string) []byte {
 	var slimit = strconv.Itoa(limit)
-	var url = "https://itunes.apple.com/jp/rss/topgrossingapplications/limit=" + slimit + "/json"
+	var url = "https://itunes.apple.com/jp/rss/top" + feed + "applications/limit=" + slimit + "/json"
+	return get(url)
+}
+
+func get(url string) []byte {
 	rsp, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err)
