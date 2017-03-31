@@ -19,8 +19,21 @@ func main() {
 		Action:  top.Action,
 		Flags: []cli.Flag{
 			cli.StringFlag{
-				Name:  "limit",
+				Name:  "limit, l",
 				Value: "200",
+			},
+		},
+		Flags: []cli.Flag{
+			cli.StringFlag{
+				Name:  "genre, g",
+				Value: "",
+			},
+		},
+		Flags: []cli.Flag{
+			cli.StringFlag{
+				Name:  "feed, f",
+				Value: "grossing",
+               Usage: "grossing, free, paid",
 			},
 		},
 	}
