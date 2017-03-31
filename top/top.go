@@ -8,9 +8,8 @@ import (
 )
 
 func Action(c *cli.Context) {
-	limit := 200
-	climit, _ := strconv.Atoi(c.String("limit"))
-	if climit < 200 {
+	limit := 50
+	if climit, _ := strconv.Atoi(c.String("limit")); climit < 200 {
 		limit = climit
 	}
 	if limit < 10 {
