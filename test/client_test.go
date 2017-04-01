@@ -1,13 +1,14 @@
 package test
 
 import (
+	"testing"
+
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/review"
-	"testing"
 )
 
 func TestClientRanking(t *testing.T) {
-	b := client.Ranking(10, "grossing")
+	b := client.Ranking(10, "grossing", "jp")
 	if b == nil {
 		t.Error("http get failed.")
 	}

@@ -12,9 +12,9 @@ func Review(id string) []byte {
 	return get(url)
 }
 
-func Ranking(limit int, feed string) []byte {
+func Ranking(limit int, feed, country string) []byte {
 	var slimit = strconv.Itoa(limit)
-	var url = "https://itunes.apple.com/jp/rss/top" + feed + "applications/limit=" + slimit + "/json"
+	var url = "https://itunes.apple.com/" + country + "/rss/top" + feed + "applications/limit=" + slimit + "/json"
 	return get(url)
 }
 

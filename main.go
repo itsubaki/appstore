@@ -1,9 +1,10 @@
 package main
 
 import (
+	"os"
+
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/review"
-	"os"
 
 	cli "gopkg.in/urfave/cli.v1"
 )
@@ -21,10 +22,15 @@ func main() {
 		Flags: []cli.Flag{
 			cli.StringFlag{
 				Name:  "limit, l",
-				Value: "200",
-			}, cli.StringFlag{
+				Value: "30",
+			},
+			cli.StringFlag{
 				Name:  "genre, g",
 				Value: "",
+			},
+			cli.StringFlag{
+				Name:  "country, c",
+				Value: "jp",
 			},
 			cli.StringFlag{
 				Name:  "feed, f",

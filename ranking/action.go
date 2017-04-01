@@ -9,13 +9,7 @@ import (
 )
 
 func limit(input string) int {
-	limit := 30
-	if tmp, _ := strconv.Atoi(input); tmp < 201 {
-		limit = tmp
-	}
-	if limit < 10 {
-		limit = 10
-	}
+	limit, _ := strconv.Atoi(input)
 	return limit
 }
 
@@ -29,7 +23,7 @@ func keyword(args []string) string {
 }
 
 func Action(c *cli.Context) {
-	b := client.Ranking(limit(c.String("limit")), c.String("feed"))
+	b := client.Ranking(limit(c.String("limit")), c.String("feed"), c.String("country"))
 	f := NewFeed(b)
 	k := keyword(c.Args())
 
