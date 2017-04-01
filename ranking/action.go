@@ -2,14 +2,15 @@ package ranking
 
 import (
 	"fmt"
+	"strconv"
+
 	"github.com/itsubaki/apst/client"
 	cli "gopkg.in/urfave/cli.v1"
-	"strconv"
 )
 
 func limit(input string) int {
 	limit := 30
-	if tmp, _ := strconv.Atoi(input); tmp < 200 {
+	if tmp, _ := strconv.Atoi(input); tmp < 201 {
 		limit = tmp
 	}
 	if limit < 10 {
@@ -28,7 +29,7 @@ func keyword(args []string) string {
 }
 
 func Action(c *cli.Context) {
-	b := client.Ranking(limit(c.String("limit")), "grossing")
+	b := client.Ranking(limit(c.String("limit")), c.String("feed"))
 	f := NewFeed(b)
 	k := keyword(c.Args())
 

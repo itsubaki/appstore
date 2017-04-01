@@ -1,12 +1,21 @@
 package review
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
 type Review struct {
 	Rating  int
 	Title   string
 	Content string
 	Author  string
+}
+
+func (r *Review) String() string {
+	rating := strconv.Itoa(r.Rating)
+
+	return "[" + rating + "][" + r.Title + "] " + r.Content + " /" + r.Author
 }
 
 func NewReview(content interface{}) *Review {
@@ -26,9 +35,8 @@ func NewReview(content interface{}) *Review {
 
 	r := &Review{}
 	r.Rating, _ = strconv.Atoi(ratinglabel.(string))
-	r.Content = clabel.(string)
-	r.Title = tlabel.(string)
-	r.Author = nlabel.(string)
-
+	r.Content = strings.Replace(clabel.(string), "\n", " ", -1)
+	r.Title = strings.Replace(tlabel.(string), "\n", " ", -1)
+	r.Author = strings.Replace(nlabel.(string), "\n", " ", -1)
 	return r
 }
