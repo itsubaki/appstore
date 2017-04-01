@@ -17,10 +17,11 @@ func Action(c *cli.Context) {
 	}
 
 	kw := c.Args().Get(0)
+	l := ranking.Limit(c.String("limit"))
 	country := c.String("country")
 	rating, _ := strconv.Atoi(c.String("rating"))
 
-	b := client.Ranking(ranking.Limit(c.String("limit")), c.String("feed"), country)
+	b := client.Ranking(l, c.String("genre"), c.String("feed"), country)
 	f := ranking.NewFeed(b)
 
 	for _, app := range f.Applist {

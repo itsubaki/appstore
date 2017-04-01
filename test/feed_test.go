@@ -8,7 +8,7 @@ import (
 )
 
 func TestFeed(t *testing.T) {
-	b := client.Ranking(10, "grossing", "jp")
+	b := client.Ranking(10, "", "grossing", "jp")
 	if b == nil {
 		t.Error("http get failed.")
 	}

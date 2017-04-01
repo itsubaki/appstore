@@ -23,15 +23,15 @@ func Keyword(args []string) string {
 }
 
 func Action(c *cli.Context) {
-	b := client.Ranking(Limit(c.String("limit")), c.String("feed"), c.String("country"))
+	l := Limit(c.String("limit"))
+	g := c.String("genre")
+	b := client.Ranking(l, g, c.String("feed"), c.String("country"))
 	f := NewFeed(b)
 	k := Keyword(c.Args())
 
 	for _, app := range f.Applist {
-
 		if app.Contains(k) {
 			fmt.Println(app)
 		}
-
 	}
 }

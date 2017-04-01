@@ -1,6 +1,6 @@
 # apst
 
- - app store command line tool.
+- app store command line tool.
 
 ## Install
 
@@ -11,25 +11,40 @@ $ go install github.com/itsubaki/apst
 
 ## Usage
 
+### Ranking
+
 ```
-$ apst -h
+$ apst ranking -h
 NAME:
-   app store command line tool. - A new cli application
+ apst ranking - Show app store ranking
 
 USAGE:
-   apst [global options] command [command options] [arguments...]
+ apst ranking [command options] [arguments...]
 
-VERSION:
-   0.0.2
+OPTIONS:
+ --limit value, -l value    (default: "30")
+ --genre value, -g value    
+ --country value, -c value  (default: "jp")
+ --feed value, -f value     grossing, free, paid (default: "grossing")
+```
 
-COMMANDS:
-     ranking, r  app store ranking
-     review, rv  app store review
-     help, h     Shows a list of commands or help for one command
+### Review
 
-GLOBAL OPTIONS:
-   --help, -h     show help
-   --version, -v  print the version
+```
+$ apst review -h
+NAME:
+   apst review - Show app store review
+
+USAGE:
+   apst review [command options] [arguments...]
+
+OPTIONS:
+   --limit value, -l value    (default: "30")
+   --genre value, -g value    
+   --country value, -c value  (default: "jp")
+   --feed value, -f value     grossing, free, paid (default: "grossing")
+   --rating value, -r value   1-5 (default: "-1")
+
 ```
 
 ## Example
