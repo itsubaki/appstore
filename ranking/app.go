@@ -6,6 +6,7 @@ import (
 )
 
 type App struct {
+	Content  interface{}
 	Rank     int
 	ID       string
 	Name     string
@@ -15,7 +16,7 @@ type App struct {
 }
 
 func NewApp(content interface{}, rank int) *App {
-	app := &App{Rank: rank}
+	app := &App{Content: content, Rank: rank}
 
 	artist := content.(map[string]interface{})["im:artist"]
 	artistlabel := artist.(map[string]interface{})["label"]
@@ -28,7 +29,9 @@ func NewApp(content interface{}, rank int) *App {
 	id := content.(map[string]interface{})["id"]
 	attributes := id.(map[string]interface{})["attributes"]
 	bundleID := attributes.(map[string]interface{})["im:bundleId"]
+	imid := attributes.(map[string]interface{})["im:id"]
 	app.BundleID = bundleID.(string)
+	app.ID = imid.(string)
 
 	rights := content.(map[string]interface{})["rights"]
 	rightslabel := rights.(map[string]interface{})["label"]
@@ -39,11 +42,11 @@ func NewApp(content interface{}, rank int) *App {
 
 func (app *App) String() string {
 	rank := strconv.Itoa(app.Rank)
+	id := app.ID
 	appName := app.Name
-	bundleID := app.BundleID
 	artist := app.Artist
 
-	return rank + ": " + appName + "(" + bundleID + ")" + " [" + artist + "]"
+	return rank + ": " + appName + "(" + id + ")" + " [" + artist + "]"
 }
 
 func (app *App) Contains(keyword string) bool {

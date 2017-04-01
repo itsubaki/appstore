@@ -30,10 +30,10 @@ func keyword(args []string) string {
 func Action(c *cli.Context) {
 	b := client.Ranking(limit(c.String("limit")), "grossing")
 	f := NewFeed(b)
-	kw := keyword(c.Args())
+	k := keyword(c.Args())
 
 	for _, app := range f.Applist {
-		if app.Contains(kw) {
+		if app.Contains(k) {
 			fmt.Println(app)
 		}
 	}
