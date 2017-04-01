@@ -12,6 +12,52 @@ $ go install github.com/itsubaki/apst
 ## Usage
 
 ```
+$ apst -h
+NAME:
+   app store command line tool. - A new cli application
+
+USAGE:
+   apst [global options] command [command options] [arguments...]
+
+VERSION:
+   0.0.2
+
+COMMANDS:
+     ranking, r  app store ranking
+     review, rv  app store review
+     help, h     Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+   --help, -h     show help
+   --version, -v  print the version
+```
+
+```
+$ apst ranking -h
+NAME:
+   apst ranking - app store ranking
+
+USAGE:
+   apst ranking [command options] [arguments...]
+
+OPTIONS:
+   --limit value, -l value  (default: "200")
+   --genre value, -g value  
+   --feed value, -f value   grossing, free, paid (default: "grossing")
+```
+
+```
+$ apst review -h
+NAME:
+   apst review - app store review
+
+USAGE:
+   apst review [arguments...]
+```
+
+## Example
+
+```
 $ apst ranking
 1: モンスターストライク(658511662) [XFLAG, Inc.]
 2: パズル＆ドラゴンズ(493470467) [GungHo Online Entertainment, Inc.]
@@ -54,7 +100,7 @@ $ apst ranking gumi --limit 200
 ```
 
 ```
-apst review 1018089162
+$ apst review 1018089162
 [4][まだ] 始めたばかりなので何とも言えないんですよねー /まなさやなはな
 [3][にゃ〜〜] 普通に遊んでマツm(._.)m /黒猫親爺
 [5][うむ♫] やはり絵が綺麗なのは重要なので つかみは最高でした。 ただスタートダッシュガチャで星5が出にくいのはちょっと期待外れでした。 これからの期待を込めて星5 /悪張飛
