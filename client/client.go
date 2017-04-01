@@ -7,8 +7,8 @@ import (
 	"strconv"
 )
 
-func Review(id string) []byte {
-	var url = "https://itunes.apple.com/jp/rss/customerreviews/id=" + id + "/sortBy=mostRecent/json"
+func Review(id, country string) []byte {
+	var url = "https://itunes.apple.com/" + country + "/rss/customerreviews/id=" + id + "/sortBy=mostRecent/json"
 	return get(url)
 }
 

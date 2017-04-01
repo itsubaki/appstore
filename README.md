@@ -32,29 +32,6 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 ```
 
-```
-$ apst ranking -h
-NAME:
-   apst ranking - app store ranking
-
-USAGE:
-   apst ranking [command options] [arguments...]
-
-OPTIONS:
-   --limit value, -l value  (default: "200")
-   --genre value, -g value  
-   --feed value, -f value   grossing, free, paid (default: "grossing")
-```
-
-```
-$ apst review -h
-NAME:
-   apst review - app store review
-
-USAGE:
-   apst review [arguments...]
-```
-
 ## Example
 
 ```

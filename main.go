@@ -14,37 +14,45 @@ func main() {
 	app.Name = "app store command line tool."
 	app.Version = "0.0.2"
 
+	flags := []cli.Flag{
+		cli.StringFlag{
+			Name:  "limit, l",
+			Value: "30",
+		},
+		cli.StringFlag{
+			Name:  "genre, g",
+			Value: "",
+		},
+		cli.StringFlag{
+			Name:  "country, c",
+			Value: "jp",
+		},
+		cli.StringFlag{
+			Name:  "feed, f",
+			Value: "grossing",
+			Usage: "grossing, free, paid",
+		},
+	}
+
 	rank := cli.Command{
 		Name:    "ranking",
 		Aliases: []string{"r"},
-		Usage:   "app store ranking",
+		Usage:   "Show app store ranking",
 		Action:  ranking.Action,
-		Flags: []cli.Flag{
-			cli.StringFlag{
-				Name:  "limit, l",
-				Value: "30",
-			},
-			cli.StringFlag{
-				Name:  "genre, g",
-				Value: "",
-			},
-			cli.StringFlag{
-				Name:  "country, c",
-				Value: "jp",
-			},
-			cli.StringFlag{
-				Name:  "feed, f",
-				Value: "grossing",
-				Usage: "grossing, free, paid",
-			},
-		},
+		Flags:   flags,
 	}
 
 	review := cli.Command{
 		Name:    "review",
 		Aliases: []string{"rv"},
-		Usage:   "app store review",
+		Usage:   "Show app store review",
 		Action:  review.Action,
+		Flags: append(flags,
+			cli.StringFlag{
+				Name:  "rating, r",
+				Value: "-1",
+				Usage: "1-5",
+			}),
 	}
 
 	app.Commands = []cli.Command{
