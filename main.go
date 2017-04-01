@@ -30,7 +30,7 @@ func main() {
 		cli.StringFlag{
 			Name:  "feed, f",
 			Value: "grossing",
-			Usage: "grossing, free, paid",
+			Usage: "grossing, free, paid.",
 		},
 	}
 
@@ -51,7 +51,7 @@ func main() {
 			cli.StringFlag{
 				Name:  "rating, r",
 				Value: "-1",
-				Usage: "1-5",
+				Usage: "1-5. -1 is all.",
 			}),
 	}
 

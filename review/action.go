@@ -16,25 +16,24 @@ func Action(c *cli.Context) {
 		os.Exit(1)
 	}
 
-	kw := c.Args().Get(0)
 	l := ranking.Limit(c.String("limit"))
 	country := c.String("country")
-	rating, _ := strconv.Atoi(c.String("rating"))
-
 	b := client.Ranking(l, c.String("genre"), c.String("feed"), country)
-	f := ranking.NewFeed(b)
 
+	kw := c.Args().Get(0)
+	r, _ := strconv.Atoi(c.String("rating"))
+	f := ranking.NewFeed(b)
 	for _, app := range f.Applist {
 		if !app.Contains(kw) {
 			continue
 		}
 
-		if rating == -1 {
+		if r == -1 {
 			PrintAll(app, country)
 			continue
 		}
 
-		Print(app, country, rating)
+		Print(app, country, r)
 	}
 
 }
