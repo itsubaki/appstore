@@ -3,7 +3,6 @@ package review
 import (
 	"fmt"
 	"os"
-	"strconv"
 
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/ranking"
@@ -26,74 +25,25 @@ func Action(c *cli.Context) {
 	)
 
 	kw := c.Args().Get(0)
-	r, _ := strconv.Atoi(c.String("rating"))
+	list := ranking.NewFeed(b).Select(kw)
 
-	f := ranking.NewFeed(b)
-	for _, app := range f.Applist {
-		if !app.Contains(kw) {
-			continue
+	for i, app := range list {
+		fmt.Println(app)
+
+		b := client.Review(app.ID, country)
+		f := NewFeed(b)
+		for _, r := range f.Review() {
+			r.ColorPrintln()
 		}
 
-		if r == -1 {
-			PrintAll(app, country)
-			continue
+		if c.Bool("stats") {
+			fmt.Println(f.Stats())
 		}
 
-		Print(app, country, r)
-	}
-
-}
-
-func PrintAll(app *ranking.App, country string) {
-	fmt.Println(app)
-
-	b := client.Review(app.ID, country)
-	f := NewFeed(b)
-
-	for _, r := range f.Review {
-		colorPrint(r.Rating, r.String())
-	}
-}
-
-func Print(app *ranking.App, country string, rating int) {
-	fmt.Println(app)
-
-	b := client.Review(app.ID, country)
-	f := NewFeed(b)
-
-	hit := 0
-	for _, r := range f.Review {
-		if r.Rating == rating {
-			hit++
-			colorPrint(r.Rating, r.String())
+		if i != (len(list) - 1) {
+			fmt.Println("")
 		}
+
 	}
 
-	length := len(f.Review)
-	shit := strconv.Itoa(hit)
-	total := strconv.Itoa(length)
-
-	rate := 0.0
-	if hit > 0 {
-		rate = (float64(hit) / float64(length)) * 100
-	}
-
-	fmt.Println(fmt.Sprintf("%3.0f", rate) + "% (" + shit + "/" + total + ")")
-}
-
-func colorPrint(rating int, review string) {
-	color := "\x1b[30m%s\x1b[0m"
-	switch rating {
-	case 5:
-		color = "\x1b[32m%s\x1b[0m"
-	case 4:
-		color = "\x1b[34m%s\x1b[0m"
-	case 2:
-		color = "\x1b[33m%s\x1b[0m"
-	case 1:
-		color = "\x1b[31m%s\x1b[0m"
-	}
-
-	fmt.Printf(color, review)
-	fmt.Println("")
 }

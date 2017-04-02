@@ -48,10 +48,9 @@ func main() {
 		Usage:   "Show app store review",
 		Action:  review.Action,
 		Flags: append(flags,
-			cli.StringFlag{
-				Name:  "rating, r",
-				Value: "-1",
-				Usage: "1-5. -1 is all.",
+			cli.BoolFlag{
+				Name:  "stats, s",
+				Usage: "Show stats.",
 			}),
 	}
 

@@ -6,7 +6,23 @@ import (
 )
 
 type Feed struct {
-	Applist [](*App)
+	list AppList
+}
+
+type AppList [](*App)
+
+func (f *Feed) Select(keyword string) AppList {
+	list := AppList{}
+	for i := 0; i < len(f.list); i++ {
+		if f.list[i].Contains(keyword) {
+			list = append(list, f.list[i])
+		}
+	}
+	return list
+}
+
+func (f *Feed) App() AppList {
+	return f.list
 }
 
 func NewFeed(b []byte) *Feed {
@@ -21,11 +37,11 @@ func NewFeed(b []byte) *Feed {
 	entry := feed.(map[string]interface{})["entry"]
 	entrylist := entry.([]interface{})
 
-	applist := [](*App){}
+	list := AppList{}
 	for i := 0; i < len(entrylist); i++ {
 		app := NewApp(entrylist[i], i+1)
-		applist = append(applist, app)
+		list = append(list, app)
 	}
 
-	return &Feed{applist}
+	return &Feed{list}
 }

@@ -16,11 +16,9 @@ func Action(c *cli.Context) {
 		c.String("country"),
 	)
 
-	k := util.Keyword(c.Args())
-	f := NewFeed(b)
-	for _, app := range f.Applist {
-		if app.Contains(k) {
-			fmt.Println(app)
-		}
+	kw := util.Keyword(c.Args())
+	list := NewFeed(b).Select(kw)
+	for _, app := range list {
+		fmt.Println(app)
 	}
 }
