@@ -7,6 +7,7 @@ import (
 
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/ranking"
+	"github.com/itsubaki/apst/util"
 	cli "gopkg.in/urfave/cli.v1"
 )
 
@@ -16,12 +17,17 @@ func Action(c *cli.Context) {
 		os.Exit(1)
 	}
 
-	l := ranking.Limit(c.String("limit"))
 	country := c.String("country")
-	b := client.Ranking(l, c.String("genre"), c.String("feed"), country)
+	b := client.Ranking(
+		util.Limit(c.String("limit")),
+		c.String("genre"),
+		c.String("feed"),
+		country,
+	)
 
 	kw := c.Args().Get(0)
 	r, _ := strconv.Atoi(c.String("rating"))
+
 	f := ranking.NewFeed(b)
 	for _, app := range f.Applist {
 		if !app.Contains(kw) {

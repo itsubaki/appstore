@@ -6,17 +6,16 @@ import (
 )
 
 type Review struct {
-	Content  interface{}
-	Rating   int
-	Title    string
-	Contents string
-	Author   string
+	Rating  int
+	Title   string
+	Content string
+	Author  string
 }
 
 func (r *Review) String() string {
 	rating := strconv.Itoa(r.Rating)
 
-	return "[" + rating + "][" + r.Title + "] " + r.Contents + " /" + r.Author
+	return "[" + rating + "][" + r.Title + "] " + r.Content + " /" + r.Author
 }
 
 func NewReview(content interface{}) *Review {
@@ -34,9 +33,9 @@ func NewReview(content interface{}) *Review {
 	n := a.(map[string]interface{})["name"]
 	nlabel := n.(map[string]interface{})["label"]
 
-	r := &Review{Content: content}
+	r := &Review{}
 	r.Rating, _ = strconv.Atoi(ratinglabel.(string))
-	r.Contents = strings.Replace(clabel.(string), "\n", " ", -1)
+	r.Content = strings.Replace(clabel.(string), "\n", " ", -1)
 	r.Title = strings.Replace(tlabel.(string), "\n", " ", -1)
 	r.Author = strings.Replace(nlabel.(string), "\n", " ", -1)
 	return r

@@ -26,7 +26,7 @@ func get(url string) []byte {
 	rsp, err := http.Get(url)
 	if err != nil {
 		fmt.Println(err)
-		return []byte{}
+		return nil
 	}
 	defer rsp.Body.Close()
 

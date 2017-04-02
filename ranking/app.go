@@ -6,7 +6,6 @@ import (
 )
 
 type App struct {
-	Content  interface{}
 	Rank     int
 	ID       string
 	Name     string
@@ -16,7 +15,7 @@ type App struct {
 }
 
 func NewApp(content interface{}, rank int) *App {
-	app := &App{Content: content, Rank: rank}
+	app := &App{Rank: rank}
 
 	artist := content.(map[string]interface{})["im:artist"]
 	artistlabel := artist.(map[string]interface{})["label"]

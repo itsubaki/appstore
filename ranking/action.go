@@ -2,31 +2,21 @@ package ranking
 
 import (
 	"fmt"
-	"strconv"
 
 	"github.com/itsubaki/apst/client"
+	"github.com/itsubaki/apst/util"
 	cli "gopkg.in/urfave/cli.v1"
 )
 
-func Limit(input string) int {
-	limit, _ := strconv.Atoi(input)
-	return limit
-}
-
-func Keyword(args []string) string {
-	keyword := ""
-	if len(args) > 0 {
-		keyword = args[0]
-	}
-
-	return keyword
-}
-
 func Action(c *cli.Context) {
-	l := Limit(c.String("limit"))
-	b := client.Ranking(l, c.String("genre"), c.String("feed"), c.String("country"))
+	b := client.Ranking(
+		util.Limit(c.String("limit")),
+		c.String("genre"),
+		c.String("feed"),
+		c.String("country"),
+	)
 
-	k := Keyword(c.Args())
+	k := util.Keyword(c.Args())
 	f := NewFeed(b)
 	for _, app := range f.Applist {
 		if app.Contains(k) {

@@ -6,7 +6,6 @@ import (
 )
 
 type Feed struct {
-	Content interface{}
 	Applist [](*App)
 }
 
@@ -28,5 +27,5 @@ func NewFeed(b []byte) *Feed {
 		applist = append(applist, app)
 	}
 
-	return &Feed{content, applist}
+	return &Feed{applist}
 }
