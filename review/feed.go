@@ -6,8 +6,7 @@ import (
 )
 
 type Feed struct {
-	Content interface{}
-	Review  [](*Review)
+	Review [](*Review)
 }
 
 func NewFeed(b []byte) *Feed {
@@ -27,5 +26,5 @@ func NewFeed(b []byte) *Feed {
 		rlist = append(rlist, NewReview(entrylist[i]))
 	}
 
-	return &Feed{Content: content, Review: rlist}
+	return &Feed{Review: rlist}
 }
