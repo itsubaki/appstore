@@ -32,6 +32,7 @@ func Action(c *cli.Context) {
 
 		b := client.Review(app.ID, country)
 		f := NewFeed(b)
+
 		for _, r := range f.Review() {
 			r.ColorPrintln()
 		}

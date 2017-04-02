@@ -37,8 +37,8 @@ func (f *Feed) ratio(rating int) string {
 }
 
 func (f *Feed) Ratio(rating int) (ratio float64, count, total int) {
-	l := len(f.Review())
 	r := len(f.Select(rating))
+	l := len(f.Review())
 	return (float64(r) / float64(l)) * 100, r, l
 }
 
@@ -69,5 +69,5 @@ func NewFeed(b []byte) *Feed {
 		list = append(list, NewReview(entrylist[i]))
 	}
 
-	return &Feed{list: list}
+	return &Feed{list}
 }
