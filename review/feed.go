@@ -7,14 +7,10 @@ import (
 )
 
 type Feed struct {
-	list ReviewList
+	ReviewList
 }
 
 type ReviewList [](*Review)
-
-func (f *Feed) Review() ReviewList {
-	return f.list
-}
 
 func (f *Feed) Stats() string {
 	str := "stats: "
@@ -38,13 +34,13 @@ func (f *Feed) ratio(rating int) string {
 
 func (f *Feed) Ratio(rating int) (ratio float64, count, total int) {
 	r := len(f.Select(rating))
-	l := len(f.Review())
+	l := len(f.ReviewList)
 	return (float64(r) / float64(l)) * 100, r, l
 }
 
 func (f *Feed) Select(rating int) ReviewList {
 	list := ReviewList{}
-	for _, r := range f.Review() {
+	for _, r := range f.ReviewList {
 		if r.Rating == rating {
 			list = append(list, r)
 		}

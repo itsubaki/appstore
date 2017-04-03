@@ -6,23 +6,19 @@ import (
 )
 
 type Feed struct {
-	list AppList
+	AppList
 }
 
 type AppList [](*App)
 
 func (f *Feed) Select(keyword string) AppList {
 	list := AppList{}
-	for i := 0; i < len(f.list); i++ {
-		if f.list[i].Contains(keyword) {
-			list = append(list, f.list[i])
+	for i := 0; i < len(f.AppList); i++ {
+		if f.AppList[i].Contains(keyword) {
+			list = append(list, f.AppList[i])
 		}
 	}
 	return list
-}
-
-func (f *Feed) App() AppList {
-	return f.list
 }
 
 func NewFeed(b []byte) *Feed {
