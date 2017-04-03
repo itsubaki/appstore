@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-func ColorPrintln(rating int , message string( {
+func ColorPrintln(rating int, message string) {
     ColorPrint(rating, message)
     fmt.Println("")
 }

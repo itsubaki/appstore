@@ -1,11 +1,8 @@
 package review
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
-
-	"github.com/itsubaki/apst/util"
 )
 
 type Review struct {
