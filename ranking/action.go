@@ -18,6 +18,10 @@ func Action(c *cli.Context) {
 
 	kw := util.Keyword(c.Args())
 	list := NewFeed(b).Select(kw)
+	for i := 1; i < len(c.Args()); i++ {
+		list = list.Select(c.Args().Get(i))
+	}
+
 	for _, app := range list {
 		fmt.Println(app)
 	}
