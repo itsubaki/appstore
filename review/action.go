@@ -24,8 +24,12 @@ func Action(c *cli.Context) {
 		country,
 	)
 
-	kw := c.Args().Get(0)
-	list := ranking.NewFeed(b).Select(kw)
+	f := ranking.NewFeed(b)
+
+	list := f.Select(c.Args().Get(0))
+	for i := 1; i < len(c.Args()); i++ {
+		list = list.Select(c.Args().Get(i))
+	}
 
 	for i, app := range list {
 		fmt.Println(app)

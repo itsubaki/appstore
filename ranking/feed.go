@@ -11,6 +11,16 @@ type Feed struct {
 
 type AppList [](*App)
 
+func (l AppList) Select(keyword string) AppList {
+	list := AppList{}
+	for i := 0; i < len(l); i++ {
+		if l[i].Contains(keyword) {
+			list = append(list, l[i])
+		}
+	}
+	return list
+}
+
 func (f *Feed) Select(keyword string) AppList {
 	list := AppList{}
 	for i := 0; i < len(f.AppList); i++ {
