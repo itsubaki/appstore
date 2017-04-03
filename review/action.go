@@ -34,7 +34,7 @@ func Action(c *cli.Context) {
 		f := NewFeed(b)
 
 		for _, r := range f.ReviewList {
-			r.ColorPrintln()
+			util.ColorPrintln(r.Rating, r.String())
 		}
 
 		if c.Bool("stats") {

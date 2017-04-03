@@ -5,6 +5,11 @@ import (
 	"strconv"
 )
 
+func ColorPrintln(rating int , message string( {
+    ColorPrint(rating, message)
+    fmt.Println("")
+}
+
 func ColorPrint(rating int, message string) {
 	color := "\x1b[30m%s\x1b[0m"
 	switch rating {

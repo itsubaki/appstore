@@ -19,11 +19,6 @@ func (r *Review) String() string {
 	return "[" + strconv.Itoa(r.Rating) + "][" + r.Title + "] " + r.Content + " / " + r.Author
 }
 
-func (r *Review) ColorPrintln() {
-	util.ColorPrint(r.Rating, r.String())
-	fmt.Println("")
-}
-
 func NewReview(content interface{}) *Review {
 	return &Review{
 		Rating:  rating(content),
