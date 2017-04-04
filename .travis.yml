@@ -3,4 +3,3 @@ language: go
 install:
   - go get github.com/itsubaki/apst
   - go install github.com/itsubaki/apst
-  - go test github.com/itsubaki/apst/test
