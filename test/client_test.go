@@ -12,7 +12,6 @@ func TestClientRanking(t *testing.T) {
 	if b == nil {
 		t.Error("http get failed.")
 	}
-	t.Log(string(b))
 }
 
 func TestClientReview(t *testing.T) {
@@ -20,7 +19,6 @@ func TestClientReview(t *testing.T) {
 	if b == nil {
 		t.Error("http get failed.")
 	}
-	t.Log(string(b))
 
 	f := review.NewFeed(b)
 	if f == nil {
