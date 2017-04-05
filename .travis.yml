@@ -7,4 +7,4 @@ install:
 script:
   - go test github.com/itsubaki/apst/test
   - apst ranking -c us
-  - apst review pokemon -c us
+  - apst review pokemon -c us -s

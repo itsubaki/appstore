@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/itsubaki/apst/genre"
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/review"
 
@@ -54,9 +55,17 @@ func main() {
 			}),
 	}
 
+	genre := cli.Command{
+		Name:    "genre",
+		Aliases: []string{"g"},
+		Usage:   "Show app genre",
+		Action:  genre.Action,
+	}
+
 	app.Commands = []cli.Command{
 		rank,
 		review,
+		genre,
 	}
 
 	app.Run(os.Args)

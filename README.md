@@ -1,5 +1,8 @@
 # apst
 
+[![Build Status](https://travis-ci.org/itsubaki/apst.svg?branch=master)](https://travis-ci.org/itsubaki/apst)
+
+
 - app store command line tool.
 
 ## Install

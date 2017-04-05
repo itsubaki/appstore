@@ -7,11 +7,13 @@ import (
 	"strconv"
 )
 
+// Review output customer reviews
 func Review(id, country string) []byte {
 	var url = "https://itunes.apple.com/" + country + "/rss/customerreviews/id=" + id + "/sortBy=mostRecent/json"
 	return get(url)
 }
 
+// Ranking output ranking
 func Ranking(limit int, genre, feed, country string) []byte {
 	var slimit = strconv.Itoa(limit)
 	var url = "https://itunes.apple.com/" + country + "/rss/top" + feed + "applications/limit=" + slimit

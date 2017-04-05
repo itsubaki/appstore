@@ -24,10 +24,8 @@ func Action(c *cli.Context) {
 		country,
 	)
 
-	f := ranking.NewFeed(b)
-
-	list := f.Select(c.Args().Get(0))
-	for i := 1; i < len(c.Args()); i++ {
+	list := ranking.NewFeed(b).AppList
+	for i := 0; i < len(c.Args()); i++ {
 		list = list.Select(c.Args().Get(i))
 	}
 
