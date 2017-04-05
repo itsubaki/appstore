@@ -16,7 +16,7 @@ func TestClientRanking(t *testing.T) {
 }
 
 func TestClientReview(t *testing.T) {
-	b := client.Review("658511662", "jp")
+	b := client.Review("1094591345", "jp")
 	if b == nil {
 		t.Error("http get failed.")
 	}

@@ -6,7 +6,6 @@
 
 ```
 $ go get github.com/itsubaki/apst
-$ go install github.com/itsubaki/apst
 ```
 
 ## Usage

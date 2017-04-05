@@ -92,11 +92,3 @@ func Limit(input string) int {
 	return limit
 }
 
-func Keyword(args []string) string {
-	keyword := ""
-	if len(args) > 0 {
-		keyword = args[0]
-	}
-
-	return keyword
-}

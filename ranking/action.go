@@ -16,9 +16,8 @@ func Action(c *cli.Context) {
 		c.String("country"),
 	)
 
-	kw := util.Keyword(c.Args())
-	list := NewFeed(b).Select(kw)
-	for i := 1; i < len(c.Args()); i++ {
+	list := NewFeed(b).Select("")
+	for i := 0; i < len(c.Args()); i++ {
 		list = list.Select(c.Args().Get(i))
 	}
 
