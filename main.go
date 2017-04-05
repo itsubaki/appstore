@@ -7,7 +7,7 @@ import (
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/review"
 
-	cli "gopkg.in/urfave/cli.v1"
+	"gopkg.in/urfave/cli.v1"
 )
 
 func main() {

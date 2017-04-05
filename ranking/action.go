@@ -5,7 +5,7 @@ import (
 
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/util"
-	cli "gopkg.in/urfave/cli.v1"
+	"gopkg.in/urfave/cli.v1"
 )
 
 func Action(c *cli.Context) {

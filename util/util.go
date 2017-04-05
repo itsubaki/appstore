@@ -7,12 +7,12 @@ import (
 	"github.com/itsubaki/apst/genre"
 )
 
-func ColorPrintln(rating int, message string) {
-	ColorPrint(rating, message)
+func ColorPrintln(rating int, a ...interface{}) {
+	ColorPrint(rating, a)
 	fmt.Println("")
 }
 
-func ColorPrint(rating int, message string) {
+func ColorPrint(rating int, a ...interface{}) {
 	color := "\x1b[30m%s\x1b[0m"
 	switch rating {
 	case 5:
@@ -25,7 +25,7 @@ func ColorPrint(rating int, message string) {
 		color = "\x1b[31m%s\x1b[0m"
 	}
 
-	fmt.Printf(color, message)
+	fmt.Printf(color, a)
 }
 
 func Limit(input string) int {

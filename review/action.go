@@ -7,7 +7,7 @@ import (
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/util"
-	cli "gopkg.in/urfave/cli.v1"
+	"gopkg.in/urfave/cli.v1"
 )
 
 func Action(c *cli.Context) {
@@ -36,7 +36,7 @@ func Action(c *cli.Context) {
 		f := NewFeed(b)
 
 		for _, r := range f.ReviewList {
-			util.ColorPrintln(r.Rating, r.String())
+			util.ColorPrintln(r.Rating, r)
 		}
 
 		if c.Bool("stats") {

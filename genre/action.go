@@ -3,7 +3,7 @@ package genre
 import (
 	"fmt"
 
-	cli "gopkg.in/urfave/cli.v1"
+	"gopkg.in/urfave/cli.v1"
 )
 
 var m = map[string]string{
