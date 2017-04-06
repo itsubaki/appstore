@@ -3,11 +3,11 @@ package main
 import (
 	"os"
 
+	"gopkg.in/urfave/cli.v1"
+
 	"github.com/itsubaki/apst/genre"
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/review"
-
-	"gopkg.in/urfave/cli.v1"
 )
 
 func main() {

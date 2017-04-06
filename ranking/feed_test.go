@@ -1,10 +1,9 @@
-package test
+package ranking
 
 import (
 	"testing"
 
 	"github.com/itsubaki/apst/client"
-	"github.com/itsubaki/apst/ranking"
 )
 
 func TestFeed(t *testing.T) {
@@ -13,7 +12,7 @@ func TestFeed(t *testing.T) {
 		t.Error("http get failed.")
 	}
 
-	f := ranking.NewFeed(b)
+	f := NewFeed(b)
 	if f == nil {
 		t.Error("feed unmarshal failed.")
 	}

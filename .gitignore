@@ -1,2 +1,4 @@
 .DS_Store
 setenv.sh
+vendor
+glide.lock
