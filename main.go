@@ -13,7 +13,7 @@ import (
 func main() {
 	app := cli.NewApp()
 	app.Name = "app store command line tool."
-	app.Version = "0.0.2"
+	app.Version = "0.0.3"
 
 	flags := []cli.Flag{
 		cli.StringFlag{

@@ -3,6 +3,7 @@ package review
 import (
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/ranking"
@@ -16,6 +17,7 @@ func Action(c *cli.Context) {
 		os.Exit(1)
 	}
 
+	fmt.Println(time.Now())
 	country := c.String("country")
 	b := client.Ranking(
 		util.Limit(c.String("limit")),

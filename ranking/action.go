@@ -2,6 +2,7 @@ package ranking
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/util"
@@ -9,6 +10,7 @@ import (
 )
 
 func Action(c *cli.Context) {
+	fmt.Println(time.Now())
 	b := client.Ranking(
 		util.Limit(c.String("limit")),
 		util.Genre(c.String("genre")),
