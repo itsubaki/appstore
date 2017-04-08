@@ -6,13 +6,13 @@ import (
 	"strconv"
 )
 
-type Feed struct {
+type ReviewFeed struct {
 	ReviewList
 }
 
 type ReviewList [](*Review)
 
-func (f *Feed) Stats() string {
+func (f *ReviewFeed) Stats() string {
 	str := "stats: "
 	for i := 5; i > 0; i-- {
 		str = str + f.ratio(i)
@@ -23,7 +23,7 @@ func (f *Feed) Stats() string {
 	return str
 }
 
-func (f *Feed) ratio(rating int) string {
+func (f *ReviewFeed) ratio(rating int) string {
 	rat, count, total := f.Ratio(rating)
 	r := strconv.Itoa(rating)
 	c := strconv.Itoa(count)
@@ -32,13 +32,13 @@ func (f *Feed) ratio(rating int) string {
 	return "[" + r + "]" + s + "%(" + c + "/" + t + ")"
 }
 
-func (f *Feed) Ratio(rating int) (ratio float64, count, total int) {
+func (f *ReviewFeed) Ratio(rating int) (ratio float64, count, total int) {
 	r := len(f.Select(rating))
 	l := len(f.ReviewList)
 	return (float64(r) / float64(l)) * 100, r, l
 }
 
-func (f *Feed) Select(rating int) ReviewList {
+func (f *ReviewFeed) Select(rating int) ReviewList {
 	list := ReviewList{}
 	for _, r := range f.ReviewList {
 		if r.Rating == rating {
@@ -48,7 +48,7 @@ func (f *Feed) Select(rating int) ReviewList {
 	return list
 }
 
-func NewFeed(b []byte) *Feed {
+func NewReviewFeed(b []byte) *ReviewFeed {
 	var content interface{}
 	err := json.Unmarshal(b, &content)
 	if err != nil {
@@ -65,5 +65,5 @@ func NewFeed(b []byte) *Feed {
 		list = append(list, NewReview(entrylist[i]))
 	}
 
-	return &Feed{list}
+	return &ReviewFeed{list}
 }

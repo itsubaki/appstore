@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-type Feed struct {
+type AppFeed struct {
 	AppList
 }
 
@@ -21,7 +21,7 @@ func (l AppList) Select(keyword string) AppList {
 	return list
 }
 
-func (f *Feed) Select(keyword string) AppList {
+func (f *AppFeed) Select(keyword string) AppList {
 	list := AppList{}
 	for i := 0; i < len(f.AppList); i++ {
 		if f.AppList[i].Contains(keyword) {
@@ -31,7 +31,7 @@ func (f *Feed) Select(keyword string) AppList {
 	return list
 }
 
-func NewFeed(b []byte) *Feed {
+func NewAppFeed(b []byte) *AppFeed {
 	var content interface{}
 	err := json.Unmarshal(b, &content)
 	if err != nil {
@@ -49,5 +49,5 @@ func NewFeed(b []byte) *Feed {
 		list = append(list, app)
 	}
 
-	return &Feed{list}
+	return &AppFeed{list}
 }

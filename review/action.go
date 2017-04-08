@@ -26,7 +26,7 @@ func Action(c *cli.Context) {
 		country,
 	)
 
-	list := ranking.NewFeed(b).AppList
+	list := ranking.NewAppFeed(b).AppList
 	for i := 0; i < len(c.Args()); i++ {
 		list = list.Select(c.Args().Get(i))
 	}
@@ -35,7 +35,7 @@ func Action(c *cli.Context) {
 		fmt.Println(app)
 
 		b := client.Review(app.ID, country)
-		f := NewFeed(b)
+		f := NewReviewFeed(b)
 
 		for _, r := range f.ReviewList {
 			util.ColorPrintln(r.Rating, r.String())

@@ -12,7 +12,7 @@ func TestFeed(t *testing.T) {
 		t.Error("http get failed.")
 	}
 
-	f := NewFeed(b)
+	f := NewAppFeed(b)
 	if f == nil {
 		t.Error("feed unmarshal failed.")
 	}
