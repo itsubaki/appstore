@@ -7,6 +7,7 @@ import (
 
 type Review struct {
 	Rating  int
+	ID      string
 	Title   string
 	Content string
 	Author  string
@@ -19,10 +20,17 @@ func (r *Review) String() string {
 func NewReview(content interface{}) *Review {
 	return &Review{
 		Rating:  rating(content),
+		ID:      id(content),
 		Content: contents(content),
 		Title:   title(content),
 		Author:  author(content),
 	}
+}
+
+func id(content interface{}) string {
+	id := content.(map[string]interface{})["id"]
+	label := id.(map[string]interface{})["label"]
+	return label.(string)
 }
 
 func rating(content interface{}) int {
