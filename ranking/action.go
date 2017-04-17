@@ -18,7 +18,7 @@ func Action(c *cli.Context) {
 		c.String("country"),
 	)
 
-	list := NewAppFeed(b).Select("")
+	list := NewAppFeed(b).AppList
 	for i := 0; i < len(c.Args()); i++ {
 		list = list.Select(c.Args().Get(i))
 	}
