@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"strconv"
+
+	"github.com/itsubaki/apst/util"
 )
 
 type ReviewFeed struct {
@@ -11,6 +13,14 @@ type ReviewFeed struct {
 }
 
 type ReviewList [](*Review)
+
+func (f *ReviewFeed) Json() string {
+	return util.ToJson(f)
+}
+
+func (f *ReviewFeed) JsonPretty() string {
+	return util.ToJsonPretty(f)
+}
 
 func (f *ReviewFeed) Stats() string {
 	str := "stats: "

@@ -32,8 +32,12 @@ var m = map[string]string{
 	"food&drink":       "6023",
 }
 
-func Genre() map[string]string {
-	return m
+func ID(name string) string {
+	v, ok := m[name]
+	if ok {
+		return v
+	}
+	return ""
 }
 
 func Action(c *cli.Context) {

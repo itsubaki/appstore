@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/itsubaki/apst/client"
+	"github.com/itsubaki/apst/genre"
 	"github.com/itsubaki/apst/util"
 	"gopkg.in/urfave/cli.v1"
 )
@@ -13,7 +14,7 @@ func Action(c *cli.Context) {
 	fmt.Println(time.Now())
 	b := client.Ranking(
 		util.Limit(c.String("limit")),
-		util.Genre(c.String("genre")),
+		genre.ID(c.String("genre")),
 		c.String("feed"),
 		c.String("country"),
 	)
@@ -23,7 +24,15 @@ func Action(c *cli.Context) {
 		list = list.Select(c.Args().Get(i))
 	}
 
-	for _, app := range list {
-		fmt.Println(app)
+	switch c.String("output") {
+	case "json":
+		fmt.Println(list.Json())
+	case "jsonp":
+		fmt.Println(list.JsonPretty())
+	default:
+		for _, app := range list {
+			fmt.Println(app)
+		}
 	}
+
 }

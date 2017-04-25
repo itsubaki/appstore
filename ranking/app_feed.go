@@ -3,6 +3,8 @@ package ranking
 import (
 	"encoding/json"
 	"fmt"
+
+	"github.com/itsubaki/apst/util"
 )
 
 type AppFeed struct {
@@ -10,6 +12,14 @@ type AppFeed struct {
 }
 
 type AppList [](*App)
+
+func (l AppList) Json() string {
+	return util.ToJson(l)
+}
+
+func (l AppList) JsonPretty() string {
+	return util.ToJsonPretty(l)
+}
 
 func (l AppList) Select(keyword string) AppList {
 	list := AppList{}

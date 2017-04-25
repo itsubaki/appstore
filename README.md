@@ -8,6 +8,7 @@
 ## Install
 
 ```
+$ glide up
 $ go get github.com/itsubaki/apst
 ```
 

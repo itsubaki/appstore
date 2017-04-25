@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/itsubaki/apst/client"
+	"github.com/itsubaki/apst/genre"
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/util"
 	"gopkg.in/urfave/cli.v1"
@@ -21,7 +22,7 @@ func Action(c *cli.Context) {
 	country := c.String("country")
 	b := client.Ranking(
 		util.Limit(c.String("limit")),
-		util.Genre(c.String("genre")),
+		genre.ID(c.String("genre")),
 		c.String("feed"),
 		country,
 	)
@@ -32,23 +33,28 @@ func Action(c *cli.Context) {
 	}
 
 	for i, app := range list {
-		fmt.Println(app)
-
 		b := client.Review(app.ID, country)
 		f := NewReviewFeed(b)
 
-		for _, r := range f.ReviewList {
-			util.ColorPrintln(r.Rating, r.String())
-		}
+		switch c.String("output") {
+		case "json":
+			fmt.Println(f.Json())
+		case "jsonp":
+			fmt.Println(f.JsonPretty())
+		default:
+			fmt.Println(app)
+			for _, r := range f.ReviewList {
+				util.ColorPrintln(r.Rating, r.String())
+			}
 
-		if c.Bool("stats") {
-			fmt.Println(f.Stats())
-		}
+			if c.Bool("stats") {
+				fmt.Println(f.Stats())
+			}
 
-		if i != (len(list) - 1) {
-			fmt.Println("")
+			if i != (len(list) - 1) {
+				fmt.Println("")
+			}
 		}
-
 	}
 
 }

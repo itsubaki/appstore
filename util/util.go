@@ -1,11 +1,33 @@
 package util
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"strconv"
-
-	"github.com/itsubaki/apst/genre"
 )
+
+func ToJson(in interface{}) string {
+	b, err := json.Marshal(in)
+	if err != nil {
+		return err.Error()
+	}
+	return string(b)
+}
+
+func ToJsonPretty(in interface{}) string {
+	b, err := json.Marshal(in)
+	if err != nil {
+		return err.Error()
+	}
+
+	var pretty bytes.Buffer
+	err = json.Indent(&pretty, b, "", " ")
+	if err != nil {
+		return err.Error()
+	}
+	return string(pretty.Bytes())
+}
 
 func ColorPrintln(rating int, message string) {
 	ColorPrint(rating, message)
@@ -38,12 +60,4 @@ func Limit(input string) int {
 		limit = 2
 	}
 	return limit
-}
-
-func Genre(name string) string {
-	v, ok := genre.Genre()[name]
-	if ok {
-		return v
-	}
-	return ""
 }

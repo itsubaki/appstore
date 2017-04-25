@@ -33,6 +33,11 @@ func main() {
 			Value: "grossing",
 			Usage: "grossing, free, paid.",
 		},
+		cli.StringFlag{
+			Name:  "output, o",
+			Value: "plain",
+			Usage: "plain, json, jsonp",
+		},
 	}
 
 	rank := cli.Command{
