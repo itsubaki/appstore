@@ -1,4 +1,4 @@
-package review
+package model
 
 import (
 	"strconv"
@@ -20,14 +20,14 @@ func (r *Review) String() string {
 func NewReview(content interface{}) *Review {
 	return &Review{
 		Rating:  rating(content),
-		ID:      id(content),
+		ID:      rid(content),
 		Content: contents(content),
 		Title:   title(content),
 		Author:  author(content),
 	}
 }
 
-func id(content interface{}) string {
+func rid(content interface{}) string {
 	id := content.(map[string]interface{})["id"]
 	label := id.(map[string]interface{})["label"]
 	return label.(string)

@@ -1,4 +1,4 @@
-package review
+package model
 
 import (
 	"encoding/json"
@@ -9,6 +9,7 @@ import (
 )
 
 type ReviewFeed struct {
+	App
 	ReviewList
 }
 
@@ -58,7 +59,7 @@ func (f *ReviewFeed) Select(rating int) ReviewList {
 	return list
 }
 
-func NewReviewFeed(b []byte) *ReviewFeed {
+func NewReviewFeed(app App, b []byte) *ReviewFeed {
 	var content interface{}
 	err := json.Unmarshal(b, &content)
 	if err != nil {
@@ -75,5 +76,5 @@ func NewReviewFeed(b []byte) *ReviewFeed {
 		list = append(list, NewReview(entrylist[i]))
 	}
 
-	return &ReviewFeed{list}
+	return &ReviewFeed{app, list}
 }
