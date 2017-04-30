@@ -7,14 +7,14 @@
 
 ## Install
 
-```
+```console
 $ glide up
 $ go get github.com/itsubaki/apst
 ```
 
 ## Usage
 
-```
+```console
 apst -h
 NAME:
    app store command line tool. - A new cli application
@@ -38,7 +38,7 @@ GLOBAL OPTIONS:
 
 ## Example
 
-```
+```console
 $ apst ranking
 1: モンスターストライク(658511662) [XFLAG, Inc.]
 2: パズル＆ドラゴンズ(493470467) [GungHo Online Entertainment, Inc.]
@@ -72,13 +72,13 @@ $ apst ranking
 30: プロ野球スピリッツＡ(940320341) [KONAMI]
 ```
 
-```
+```console
 $ apst ranking cygames
 3: グランブルーファンタジー(852882903) [Cygames, Inc.]
 6: シャドウバース (Shadowverse)(1050059017) [Cygames, Inc.]
 ```
 
-```
+```console
 $ apst review cygames -s
 4: グランブルーファンタジー(852882903) [Cygames, Inc.]
 [3][面白い] アニメやってたから面白いとさらに感じる様になった / 6197youhei
