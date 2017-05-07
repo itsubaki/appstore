@@ -73,17 +73,27 @@ OPTIONS:
 ## Example
 
 ```console
-apst ranking -c us -l 10
+apst ranking -c us
 1: Clash Royale(1053012308) [Supercell]
 2: Netflix(363590051) [Netflix, Inc.]
 3: Candy Crush Saga(553834731) [King]
 4: Game of War - Fire Age(667728512) [Machine Zone, Inc]
-5: Mobile Strike(934596429) [Epic War LLC]
-6: Clash of Clans(529479190) [Supercell]
-7: Pandora - Music & Radio(284035177) [Pandora Media, Inc.]
-8: Tinder(547702041) [Tinder Inc.]
-9: YouTube - Watch, Upload and Share Videos(544007664) [Google, Inc.]
-10: Pokémon GO(1094591345) [Niantic, Inc.]
+5: Pandora - Music & Radio(284035177) [Pandora Media, Inc.]
+6: Mobile Strike(934596429) [Epic War LLC]
+7: Clash of Clans(529479190) [Supercell]
+8: YouTube - Watch, Upload and Share Videos(544007664) [Google, Inc.]
+9: Tinder(547702041) [Tinder Inc.]
+10: Candy Crush Soda Saga(850417475) [King]
+11: Star Wars™: Galaxy of Heroes(921022358) [Electronic Arts]
+12: Pokémon GO(1094591345) [Niantic, Inc.]
+13: Spotify Music(324684580) [Spotify Ltd.]
+14: HBO NOW: Stream original series, hit movies & more(971265422) [HBO]
+15: Slotomania Slots Casino – Play Online Games(447553564) [Playtika LTD]
+16: Hulu: Watch TV Shows & Stream the Latest Movies(376510438) [Hulu, LLC]
+17: Toy Blast(890378044) [Peak Games]
+18: MARVEL Contest of Champions(896112560) [Kabam]
+19: Summoners War(852912420) [Com2uS Corp.]
+20: 8 Ball Pool™(543186831) [Miniclip.com]
 ```
 
 ```console
