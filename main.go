@@ -18,7 +18,7 @@ func main() {
 	flags := []cli.Flag{
 		cli.StringFlag{
 			Name:  "limit, l",
-			Value: "30",
+			Value: "20",
 		},
 		cli.StringFlag{
 			Name:  "genre, g",

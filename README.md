@@ -36,153 +36,108 @@ GLOBAL OPTIONS:
    --version, -v  print the version
 ```
 
+```console
+apst ranking -h
+NAME:
+   apst ranking - Show app store ranking
+
+USAGE:
+   apst ranking [command options] [arguments...]
+
+OPTIONS:
+   --limit value, -l value    (default: "30")
+   --genre value, -g value    
+   --country value, -c value  (default: "jp")
+   --feed value, -f value     grossing, free, paid. (default: "grossing")
+   --output value, -o value   plain, json, jsonp (default: "plain")
+```
+
+```console
+apst review -h
+NAME:
+   apst review - Show app store review
+
+USAGE:
+   apst review [command options] [arguments...]
+
+OPTIONS:
+   --limit value, -l value    (default: "30")
+   --genre value, -g value    
+   --country value, -c value  (default: "jp")
+   --feed value, -f value     grossing, free, paid. (default: "grossing")
+   --output value, -o value   plain, json, jsonp (default: "plain")
+   --stats, -s                Show stats.
+```
+
+
 ## Example
 
 ```console
-$ apst ranking
-1: モンスターストライク(658511662) [XFLAG, Inc.]
-2: パズル＆ドラゴンズ(493470467) [GungHo Online Entertainment, Inc.]
-3: グランブルーファンタジー(852882903) [Cygames, Inc.]
-4: アイドルマスター シンデレラガールズ スターライトステージ(1016318735) [BANDAI NAMCO Entertainment Inc.]
-5: Fate/Grand Order(1015521325) [Aniplex Inc.]
-6: シャドウバース (Shadowverse)(1050059017) [Cygames, Inc.]
-7: LINE：ディズニー ツムツム(724594093) [LINE Corporation]
-8: 戦国炎舞 -KIZNA- 【人気の本格戦国RPG】(580399292) [Sumzap Inc.]
-9: 実況パワフルプロ野球(938506958) [KONAMI]
-10: 白猫プロジェクト(895687962) [COLOPL, Inc.]
-11: バンドリ！ ガールズバンドパーティ！(1195834442) [Craft Egg Inc.]
-12: ラブライブ！スクールアイドルフェスティバル(626776655) [KLab Inc.]
-13: 星のドラゴンクエスト(997667431) [SQUARE ENIX INC]
-14: クイズRPG 魔法使いと黒猫のウィズ(621106129) [COLOPL, Inc.]
-15: FINAL FANTASY Record Keeper(866037912) [DeNA Co., Ltd.]
-16: 白猫テニス(1062497483) [COLOPL, Inc.]
-17: 実況パワフルサッカー 【選手育成サッカーゲーム】(1094160662) [KONAMI]
-18: ファイアーエムブレム ヒーローズ(1181774280) [Nintendo Co., Ltd.]
-19: テイルズ オブ アスタリア(826138094) [BANDAI NAMCO Entertainment Inc.]
-20: ONE PIECE トレジャークルーズ(824116884) [BANDAI NAMCO Entertainment Inc.]
-21: ONE PIECE サウザンドストーム(1082959065) [BANDAI NAMCO Entertainment Inc.]
-22: THE KING OF FIGHTERS '98UM OL(1128691363) [OURPALM INC.]
-23: 誰ガ為のアルケミスト(1018089162) [gumi Inc.]
-24: ドラゴンボールZ ドッカンバトル(951627670) [BANDAI NAMCO Entertainment Inc.]
-25: LINE(443904275) [LINE Corporation]
-26: 剣と魔法のログレス いにしえの女神(700626925) [Marvelous Inc.]
-27: LINE ポコポコ(888615473) [LINE Corporation]
-28: 夢王国と眠れる100人の王子様(938095479) [GCREST.Inc,]
-29: ドラゴンクエストモンスターズ　スーパーライト(710247888) [SQUARE ENIX INC]
-30: プロ野球スピリッツＡ(940320341) [KONAMI]
+apst ranking -c us -l 10
+1: Clash Royale(1053012308) [Supercell]
+2: Netflix(363590051) [Netflix, Inc.]
+3: Candy Crush Saga(553834731) [King]
+4: Game of War - Fire Age(667728512) [Machine Zone, Inc]
+5: Mobile Strike(934596429) [Epic War LLC]
+6: Clash of Clans(529479190) [Supercell]
+7: Pandora - Music & Radio(284035177) [Pandora Media, Inc.]
+8: Tinder(547702041) [Tinder Inc.]
+9: YouTube - Watch, Upload and Share Videos(544007664) [Google, Inc.]
+10: Pokémon GO(1094591345) [Niantic, Inc.]
 ```
 
 ```console
-$ apst ranking cygames
-3: グランブルーファンタジー(852882903) [Cygames, Inc.]
-6: シャドウバース (Shadowverse)(1050059017) [Cygames, Inc.]
-```
-
-```console
-$ apst review cygames -s
-4: グランブルーファンタジー(852882903) [Cygames, Inc.]
-[3][面白い] アニメやってたから面白いとさらに感じる様になった / 6197youhei
-[3][まあまあ] これから / かーかぶた
-[2][普通] 普通 / wgdgmg
-[4][絵が綺麗] 声優がいっぱい / bb10mo
-[4][なかなか] 面白いと思います / 塩焼きそば大盛り
-[3][それなり] ゲーム自体は面白いが課金の必要性が高い / こころライター
-[5][面白い] まだ一章をクリアしただけですがここまでしっかりとした本格RPGとは思ってませんでした。 / mo5k
-[4][面白い] 面白いと思うけどなんか画面ぼやけて見えるのが微妙 / トリッピーＱ
-[2][さあ] 初心者つらい / シーマンか
-[4][まだ始めたばかり] これから面白くなっていけばいいな / なひよあ
-[5][初めだばっかり] とりあえず頑張ってる / 結構よさげ
-[4][あ] 中々面白いです！ / らーやは
-[5][グラブルー] 楽しいね！ / Iijirin
-[4][やりやすくて、面白い] 絵がきれいでやりやすくて、面白いですね。 / 筋トレ野郎なり
-[3][あ] よかね / さえそゆ
-[5][あ] 面白い / ネックネーム被りすぎワロリンwww
-[5][タイトル] 中々 / なかやんd
-[5][ん！] おもしろい / ないちょんげーる
-[5][SSR] でふぅぅぅ / ( *｀ω´)はゆなゆ
-[5][じゃじゃうあじゃじゃあ] あじゃいあいあ / あああっをっっっw
-[5][声優が豪華！] 聞いたことのある人が多い！ゾロ、ウソップ、銀さん...これからもでてくるのかな？ / kin-tama1235
-[4][グラブル] おもしろい！ / r_i_i_k_27
-[4][声優さんが] 豪華で嬉しい！ / んーひが
-[5][面白い] たのしい / またかなやらはなたあか
-[5][くぎゅううううう] くぎゅううううううう / (｀・∀・´)キリッ
-[5][へぇ〜] 楽しいよ！ / N磁極
-[4][bgmが] よいね / p0nkich1
-[5][たのしい] です / さなゆみ
-[4][最高] さいこう！ / それしってる
-[3][前からすこしずつやってるけど] 面白い。 / ゆう@gry
-[4][面白い👍] いいね👍 / S.T#19
-[5][5] ゲームは楽しいけどガチャかぶりですぎです^ω^） / *\(^o^)/*たのしー
-[4][なかなか] バトルの演出もいいしキャラも綺麗 意外とハマりました / くろっちぃ。
-[2][い] い / うまのしっぽさん
-[4][いろんな] 登場人物がいる。 / ただし23
-[5][始めたばかりですが。] 面白いです！！ 装備方法や強化方法が少し分かりにくく感じます…。  でも演出も格好良くて、ついついやってしまいます！！ / あじゃもん
-[4][絵が綺麗] ゲーム自体は始めたばかりなので未だ分かりませんが、絵は非常に良いですね( ◠‿◠ ) / zx200-5
-[3][い] え / ましなる
-[5][まだ] はじめたばかりでよーわからん / せーふー
-[3][まあまあ] まあまあ / NaO......
-[4][グラブル] まーいいかんじかな、だけど、ガチャがいまいち / リウみん
-[5][ヴァンピィちゃん] おもしろい / AZMSNDSY
-[4][面白い！] 話の内容とか絵がいいね / 佐倉美紗
-[5][なかなか] 良い！ / みずゆ
-[5][面白い] 絵が綺麗 / やすべい☆
-[4][始めたばかり] まだわからんけど、フルボイス、ストーリーがいいね / gjpvkjgk
-[5][なかなか面白い] アニメを見て気になってやってみるとなかなか。 / 魔人ダンテ
-[4][楽しい] 面白く / ふおっくすいつき
-[5][ハイ(^q^)/] ワカリマシタ(^q^) イイレス(^q^)/ / ハサミ、ちょきちょき
-[5][グランブル] 面白い٩(๑❛ᴗ❛๑)۶ / ゼロ☆☆☆☆☆
-stats: [5]44%(22/50), [4]36%(18/50), [3]14%(7/50), [2] 6%(3/50), [1] 0%(0/50)
-
-8: シャドウバース (Shadowverse)(1050059017) [Cygames, Inc.]
-[1][ごみ運営] 2コス15枚3コス10枚入れてるのに４ターンの間に1枚も引かないしかもそれがランクマで4連続明らかに確率とかの問題じゃない運営がごみ何考えて作ったし馬鹿じゃないの？ / 虹睨の妖刀
-[1][ヘブンリーイージス] ヘブンリーイージスが強すぎて面白くない、修正してください。 / a'zv),oo
-[1][ゴミ] やめたらこの仕事 / admjtpgmw.mpuw
-[1][おもんない] 運要素が強く、人のデッキをパクリそれで勝ち確になった途端煽り始めるガイジばかり。さらに各ジョブの格差が酷く、相性が悪いと相手がよほど事故っていない限り勝てません。 / 亜やなか
-[1][最速インフレゲーム] もうちょっと遊べるかと思ったけどもう潮時かなw 次の新カードとか出した瞬間勝利するカードでそうである意味楽しみw / てはゆかまゆさま
-[2][面白いんだけど...] 面白いんだけどバトル中にゲームが強制終了するバグを直していただきたい。 / ゆみるゆみる
-[5][環境ゲー] 楽しいけど早くイージスは下方修正してくれ / オスとグッド痛い
-[5][まじで面白い！] スマホでここまで、できるなんて かなり面白い！まじで面白い！ / 意外に良い
-[1][カ] 序盤守って後半強いカード出したら勝ちみたいなカードだすし あるカードが来ないと回らないデッキは運ゲー過ぎる / てなのねの
-[2][バランス調整しっかりして] ランマチでドラゴンとしか当たらない。バランス調整サボってませんか？ / 東方妖怪小町
-[3][よく落ちる] 面白いですが、ランクマッチでめっちゃ落ちます。リーサルが見えてる時も落ちます。直してください / 中野クリステル
-[5][楽しくプレイしてるんですが……] ビジョップの新カード、｢ヘヴンリーイージス｣あれ無敵すぎて……回復されまくってあれ出されて、対応策がほぼ無いです……せめてニュートラルカードにその対策のを入れるべきだったかなと……補正は入ってしまうのでしょうか / タナカルパッチョ
-[1][俺] バトル中に落ちた時復帰できる様に早くしてください / nineナインーっ
-[3][新環境楽しいけど、、、] 対戦中アプリが落ちることがしばしば。改善よろしくお願いします。 / 露骨な卵
-[3][なんで？] 第4弾アプデ後すごく重くなってしょっちゅう落ちるんだけど。  特にランクマ潜ってる最中に落ちるのはとてもとてもショック…。 / ❁*＊(⸝⸝⸝ˊᗜ​ˋ⸝⸝⸝)❁*＊
-[1][差別人間] 俺だけ勝たせてくれないよね？ 調子のんなよクズ運営2Pickもゴミカードしか無いしよ八百長が調子のんなよ差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営差別運営 / ゴミゲー サービス終了しろ
-[5][デッキ作りが楽しい] サイトに掲載されてるデッキを使っても勝てないから頭の悪い自分でも簡単に使え作業ゲームに変えれる / 破産ー
-[5][ガチャ現在激緩み] 8連でレジェンド4枚！？ これまでそんなことなかったのに、急に激緩みに… デッキしか組めませんけど / やっほいやっほほい
-[1][新パック] どんどん効果がおかしくなっていって全除去 出したらゲーム終了まで死なない 一気にたくさんのフォロワーを出すなどありえない効果ばかりでます / ガラル
-[1][頭使えよ] 新弾レジェ、ゴミばっかじゃねぇか 一気に面白くなくなった バランス考えろや / おめあめふれふれ〜
-[2][クラッシュ] グリームニル出したらアプリ落ちました / 我こそは風の軍神
-[5][楽しい] フレンドと対戦できる！ / wakabayasikeisuke
-[1][やる価値ないよ。時間の無駄使い。] ほんとつまらない カードの強さに格差あり過ぎ やってて不愉快 楽しくないよ ☆1も付けたくないよ このゲームはオススメしません 自分もこのアプリを消します / 練乳イチゴミルクカキ氷
-[1][最高のコンテンツを盗む会社] パクリゲーなので星1です / ＋アーチャー＋
-[1][iPhone6sでの問題です。] アップデートしてから頻繁に落ちるようになりました。 残念です。 / 高山さつき
-[1][庭園よりイージス] 庭園に制限かけるならイージスにかけてくれよーー(♯｀∧´) / ペッペラ
-[1][。] 神々の騒乱絞りすぎ / バウバウマニマニ
-[1][ぼくのかんがえたさいきょうのかーど] ヘヴンリーイージスとかいう馬鹿スタッツカードwwww 現状うたかたの月でしか対処できないとか世も末だな。 あ、ナーフはしなくていいよ？(^ω^) どうせ何言われたってしないだろうから。 / りゅうちゃんてっちゃん
-[1][辞めたわ] シャドバが出た頃から始めたけどだんだん意味のわからないカードがでてきて楽しくなくなった。 正直星1つもつけたくないレベル。 / でぃすお
-[3][ビショップの無双ぶりよ] 皆様が言われている通り今回追加されたイージスは少々規格外過ぎでは無いでしょうか？ あのスキル持ちであの火力って前回のバハムートといいドラゴン使いを馬鹿にしすぎですよね せめて攻撃力の調整をお願いします / クラギナ
-[1][ダウンロード価値なし。] ガチャについてはカードゲームとは言えないほどの酷さ。 現実では箱買えばほぼ1番レアが入っているのにこのゲームは違う。 70連しても、レジェンド0もしばしば。 この時点で運ゲー。 そして乱数シャッフルシステムもゴミ。 毎回強いカードが固まっている。 手札は毎回6以上二枚。 強いカードはほぼ山札の最後。 もうオワコン。このゲームが終わるのは時間の問題。 / fal3150
-[3][メンテして♡] 面白いけどアプリがめちゃくちゃ落ちる / きtもり
-[1][まじゴミ] 運営頭悪いんちゃん？ 確率絞って当たらんくするわ、チートカードめっちゃ出すわ、もっとゲームバランス考えろ メンテ来るまでアンストやな(´Д｀)ﾊｧ… ガッカリやわ…んじゃな( ´・ω・｀)ﾉ / まじ死んでまう
-[1][落ちすぎ] アプリ落ちすぎてやる気でん リリース当初からある問題を未だに解決できてないのは明らかに運営の努力不足本当にくず / もっちゃんsp
-[3][ドラゴンばっかです] １つのデッキに入れられるニュートラルの数を10枚とかに制限した方がいいと思います。 / おだ かいと
-[2][おもしろいんだけど・・・] ゲームバランスおかしい ヘヴンリーイージスほんとやめてほしい / ハマシン
-[1][ゴミ運営] はっきり言って小学生と同レベルの頭の運営 バランスは考えない デバックしてない ドローやパックから出るカードの内容まで操作する始末 流石Cygameですわ ゴミ運営でしかない / shadowfx2
-[1][落ちる] ランクマッチで進化したり攻撃したりするとよく落ちます。改善お願いします。 / jdnpjtjm
-[5][ガチャ率w] 50連とか引いてレジェンドでないとか喚いてるけど、そんなんじゃ他のゲームも出来ないね^ ^ （ちなみに私は10パックでレジェンド3枚w） / あらもんど553
-[5][最高] おもしろい / よらひむ
-[1][バグ] カグヤのラストワードが機能しません。何度やってもどうにもならないので、確認お願いします。 / 👙☜（´ﾟ c_,ﾟ｀☜）
-[5][運がない奴だまれw] 運がない奴だまれwお前らの運が悪いだけDa☆Ka☆Ra10連で3枚レジェンド出たお☆文句言うなら自分にどうぞks / 薄らい
-[3][あ] バトル中に勝手に落ちて負け扱いされるのはめっちゃ腹立つそこ改善したら完璧 / 凛可愛い
-[1][落ちすぎ] 対戦中にアプリが落ちるの多すぎです、頼むからそこだけ直してくれ。後は全部良いから / はるたね
-[1][通信切れる] すぐに通信切れてアプリが落ちる。むっちゃくちゃイライラするはよなおして / くちゃーに4
-[1][強制終了される] アップデートしてから ランクマッチしてる途中で強制終了される。 早く直してください。 / あるみね
-[4][面白いが…] 音が出なくなる事が度々あるので直して欲しいです。それとレジェンドの排出率が人によって圧倒的に違うのでそこも直して欲しいと思います。 / なかなか良いですね^_^
-[1][最近よくアプリが落ちる] 以前のバージョンよりさらに落ちるようになった気がする その後の復帰はいつになったら開発出来るのか？散々あの文章見せられるこっちの身にもなって欲しい そうじゃないならせめてアプリが落ちる原因をどうにかして欲しい / ハヤオカリン
-[3][なんてこった！] あと一回の攻撃で勝利だったのに、落ちるとかまじで運が悪すぎる、、、 改善してください。 / 駆け出しのロイヤル
-[5][ゲームはおもしろいけど...] 僕のスマホが悪いかもしれませんが、ランクマッチ中に突然ゲームが落ちる時があるので、早急に対処お願いします！ / shoumabo
-stats: [5]20%(10/50), [4] 2%(1/50), [3]16%(8/50), [2] 8%(4/50), [1]54%(27/50)
+apst review netflix -c us -l 10
+2: Netflix(363590051) [Netflix, Inc.]
+[1][Error] I'm receiving error message 10013 for the past day or so I don't know how to fix it / Lagorejess
+[1][App Won't Load] App keeps saying there's no Internet connection, all my other apps are working just fine. Shows won't load. / okbaby_
+[5][Good app] App is pretty stable overall. One improvement could be to allow to jump forward 10 seconds button / Illinois Customer
+[1][Netflix why!?] Ok so I'm trying to watch "Jack and the coco-clock heart" but all I get is one picture and I think that right now Netflix is a piece of crap... plz fix / Katie grand
+[4][App crashing] App crashing! Screen turns black, sometimes can't even get it open! Start to get upset 😂😂😂. For real thou. Fix it please. / Ahliezah
+[1][I'm disappointed 😔] I really want to give this a 5 star because the actual movies and TV shows are really good. But I just can't with these problems. Sometimes I don't even want the app but it just opens by itself. But when I actually want it, the app will crash or won't let me play movies. Please change these mistakes ASAP so I can give this a 5 star rating 😡😡 / Megawesome✌🏼️
+[1][Can't Even Install App] For some reason, the app was grayed out on my screen -- maybe because I needed to update the app. But now I can't even install the app. It gets stuck after downloading. / Asking Q
+[1][Errors] An error pops up every time i press on a title, it's a different error sometimes but usually it's the same one. I've tried in different cities and restarting the app and deleting and getting it back and trying different internets but now, Netflix is having problems and it is making my whole day frustrating. / Xxxem4xxX
+[1][App is keep crashing.... now I can't even use the app anymore.] What happened guys. this is terrible. how do you suggest I use this app... I am seeing same as the last review. I wish there was less than one star. / Voldomre
+[1][Problem with the version] When I am watching, no matter what, the app crashes!! / Starflowers1
+[1][Terrible] The app refuses to work on Cellular.  It keeps saying "No Internet Connection" despite it being connected to Cellular and the phone not being on Airplane Mode. / Chris Ban
+[4][Netflix "The Best App"] This app is great! Now you can download movies and shows. Perfect for traveling / Caire10
+[1][App crashing and not saving my place!!] The Netflix app has suddenly stopped keeping my place in a show or movie and just starts over at the beginning of that episode/movie when I open the app. This happens between 5-10 times per day. The app also crashes and sends me to the home screen of my phone a couple of seconds into watching something. This has started happening twice a day. Maybe I watch too much Netflix, but these people need to get it right. / Mike Binette
+[1][Netflix I'm pretty disappointed.] It's a decent app and it does have a reasonable amount of shows and movies and such. But it could really use an update in many categories a lot of the content is a little dated and the Anime section. It's very shameful and some very popular anime's have recently been removed such as : FairyTail, Black Butler and more so if you could please take it upon yourselves to upgrade the content in all the categories that would be simply lovely. / Netflix is a disgrace
+[2][Screw up] The removal of the 5 star rating system, and removal of old shows and replacing them with terrible Netflix originals makes me want to unsubscribe faster than the drop in quality of my recommended list. / Dudiwhfiekwhdhfh
+[2][Nothing for 8-10 year olds in Marvel] One recommendation if you are a adult you know this already; all the Marvel shows (Daredevil, Luke Cage, Jessica Jones) are TV-MA and the only PG or PG-13 movies are Captain America Civil War and LEGO marvel. Sadly that's why I give 2 stars. / xinfinity 2.0
+[1][Shows with missing episode not even a complete series] This is really disappointing I was watching one of my shows and all of the episodes weren't there and all the rest of them didn't even have the second season I just ask to add the rest of the episodes to blue exorcist attack on titan and fairy tail / butch8313
+[5][Good app] :) / YL Drop Stars
+[3][Please fix this] I love Netflix but for the last few days, I open the app it works fine until I try to watch a show then it says error (10030) stuff like that so i can't watch anything / Brownie231491
+[3][Usually give 5 stars but...] Ever since the last update it hasn't been loading. And when it does it says error. Won't let me play anything. Keeps saying check internet connection. It's all connected. And I have unlimited data. So I don't understand why this is happening. Been going on for a few days now. This is a big downer for me since I love Netflix. Please fix.. / BabyCakes91
+[1][Complete garbage] If you expect me to pay for another month the gd app better not fing crash every time I try to watch a video.  It is about effective as staring at my blank white wall. Actually, staring at my wall is much less frustrating. Also like/dislike options? What kind of weak ineffective rating system is that?  It is imprecise and ineffective and just seems like it was put in place to shield some special snowflakes from honest critique. A nonfunctional app is worth less than a rock. / Ogilthorp
+[1][Terrible] Bring the old ratings system back so we can properly rate your own politicized garbage, thus saving time for many people. / xavior mcfredrickson
+[1][The app keeps crashing] I normally don't have any trouble with the app, but since the last update, anything I try to watch (including things I've downloaded) will play for around 30 seconds and then the app crashes, and it happens every time, so I haven't been able to watch anything. If this gets fixed, I will re-rate the app because I normally love it. / Brainwords
+[3][Can't use it] I personally love Netflix. However, the app doesn't work at all. I can't even get in to log in! This has been happening for a month or so now. / Miiiiiiiimo
+[1][Incompatible with ChromeCast] If I want to stream to my ChromeCast, I have to uninstall, redownload, and reinstall the app, every single time, because it refuses to recognize that I have a ChromeCast if I simply open the app. It doesn't matter if I reset the ChromeCast, or my router and modem. If I want to stream to my ChromeCast, I have to uninstall and reinstall it every single time. What a pain.  Edited to add: since they updated the app on 5/1, it's worse. At this point I almost hope they don't fix it, since if it suddenly started working, I'd probably suffer a cardiac event from the shock. / Hipster Kale
+[1][Upset] I can't watch 😳it freezes on me & says I don't have internet although I do have / Wryloklnjjnnmm
+[3][Not as good as Android version] On Android if you put your phone to sleep mode, then return to the Netflix app it will display the video progress immediately. Whereas, on iPhone the status/controls must be reloaded. Additionally, controls can be accessed on android lock screen, but not on iPhone. CMON!! / Joshua sky
+[1][horrible!] i loved netflix, up until today when it kept saying my password / email was incorrect. it wasn't, considering someone i share the account with checked and it was fine for them. garbage! / Yoyouoyouoyoyohoyoyoyipadsrcuk
+[2][Crashes] Latest version keeps crashing. Will try to load video on iPad, the loading wheel pops up and then crashes shortly after. / ak137007
+[2][At a loss for words] I love this app. Watch all my favorite shows and movies. But here recently I cant watch anything at all. No idea what's going on, but I'd gladly change this entire review to positive statements if I can return to my shows please. 🙃 Otherwise I love what it has to offer. / Mathew Jonker
+[1][Lots of crashing] So for a while now, the app will crash at random, normally shortly after I've opened the app and about to watch something. And it's annoyingly frequent; I'll reopen the app several times and it still happens. They really need to fix this cause I'm so close to deleting this and switching to something else. / CreativeArt
+[1][Bring back 1-5 star rating] So disappointed at this! This is how I would judge and find what's good to watch I hate this new % crap! / Mj23584
+[1][FIX IT ALREADY.] I live in Japan, and judging by the Japanese reviews as well, MANY of your customers are experiencing sudden crashes upon selecting a program. It's incredibly annoying and shouldn't take this long to deliver a solution to a problem that leaves the application virtually unusable. / aengdulie
+[5][Fresh Content] I had cancelled Netflix after using it for 5 years a while ago. But now I am back because of the more newer and exclusive Marvel quality content being created here at Netflix. Video quality and Navigability of the app is also amazing and impressive compared to the other streaming options. / Syed M Mehdi
+[3][Please] put bad girls club on here and I'll like the app! / lexi1264
+[1][Update=crashing] So many error messages and crashes since the new update. / Nütopian
+[1][Won't play] It didn't let me watch anything even if I have payed for it. It keeps saying error . I tried signing out also deleted the app and getting it back and Turing off my phone. Nothing is working. / 😕😌
+[1][Glitchy] This app is so crazy glitchy. IF, and that's a big if, I can get my video to even load without an error code, it never saves my spot. So I always have trouble getting it to load and then when I do, I have to look for the last spot I was at manually because it never remembers / eagsam
+[3][Bug with subtitles] Please fix this bug. It's so annoying to have to turn on subtitles for every episode. Just once and have them stay on please! / Meganashlay
+[4][One problem!!( MAKe 3RD SEASOn of KUROMUKURO PLEASE)!!] My question is why does Netflix make Netflix originals if they don't even finish the season or make a new episode. Instead it leaves a cliff hanger and never has a new season or episode so what's the point of creating a Netflix original if you don't finish it in the first place......for example kuromukuro (anime Netflix original) the last season has been in 2016 so last year and I check to so if there was a possibility of a 3rd season but people said maybe or maybe not so what's the point of really watching something that doesn't have a end or that will not continue...... But to be honest I just want a 3rd season to kuromukuro please!!!! I want there to be a ending a good one it's just my favorite anime in Netflix and I hope Netflix makes more anime,Netflix Originals like that one or similar with romance,comedy,action, and drama so like the anime kuromukuro I guess but ya just please!!!!!! Make a ending to it I'm begging you?! / adilene B
+[1][Keeps closing] I'll be 5 mins into a Show and it shuts down!!!  Happend 5 times already in the last 20 mins 👎🏼👎🏼👎🏼😡 / Dizz12345
+[1][Thumbs down to the new rating system] Personally, I used to rate every movie I watched from 1-5 since I watch wayyyy too many movies. But now with the rating system a thumbs up or down I can't: 1) tell if I watched the movie before; and 2) if I did watch it before, did I rate it a 1 bc it was crap or did I rate it a 5 because I really liked it and would want to watch again?? I love Netflix, but please put the rating system back. I need the over 1,000 ratings I did brought back pleaseeee 😩😩 / MovieBinger
+[1][Browsing is now impossible] Removal of the star rating system makes choosing a new content to watch nearly impossible. I'm constantly having to choose titles and scan through them to see if they are any good before actually watching and more often than not what's being put forward as the top picks are absolutely horrid. If you're trying to drive traffic to Amazon then you're succeeding. / MSM Sem
+[1][What happened to the old Netflix?] Netflix is losing more and more of its shows. It is now full of mostly "ok" shows. And with the new update it won't even let me watch anything most of the time. The glitches are bad and honestly Netflix just seems to be a dying app. Very sad / Codecar
+[1][Can't rate anything!] Bring back ratings! I'm getting terrible suggestions immediately when they took away the rating system. / Nocomplaints
+[2][It's kinda annoying] It says a I have connection issues and I have to close out of it constantly and try again and again. And I just literally signed up. Kinda bums me out. / Chantal east coast
+[1][0 Stars] You knew taking away the star rating would give you bad reviews, right? By trying to save your content from criticism you've made the whole app a waste of time. If I previously rate a show/movie one star and after the update it gives me a 98%  match how am I supposed to compare this to other videos? Just plain dumb. / Izzy sandbank
+[1][👎] 1 - stop taking shows off 2 - why the hell can't we take screenshots? / Izzy_Gurl
+[1][A failure] Nothing will play. Waste of space. / Hbuguggyug
+[4][Terrible changes, still great] Very confused on the low ratings. The only complaints I have are the rating systems and the increase of the price. Other than that, still great show selections. / JackyH1104
+stats: [5] 6%(3/50), [4] 8%(4/50), [3]12%(6/50), [2]10%(5/50), [1]64%(32/50)
 ```
