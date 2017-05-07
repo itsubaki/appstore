@@ -87,7 +87,7 @@ apst ranking -c us -l 10
 ```
 
 ```console
-apst review netflix -c us -l 10
+apst review netflix -c us
 2: Netflix(363590051) [Netflix, Inc.]
 [1][Error] I'm receiving error message 10013 for the past day or so I don't know how to fix it / Lagorejess
 [1][App Won't Load] App keeps saying there's no Internet connection, all my other apps are working just fine. Shows won't load. / okbaby_
