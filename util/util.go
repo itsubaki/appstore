@@ -7,7 +7,11 @@ import (
 	"strconv"
 )
 
-func ToJson(in interface{}) string {
+func Json(in interface{}, pretty bool) string {
+	if pretty {
+		return JsonPretty(in)
+	}
+
 	b, err := json.Marshal(in)
 	if err != nil {
 		return err.Error()
@@ -15,7 +19,7 @@ func ToJson(in interface{}) string {
 	return string(b)
 }
 
-func ToJsonPretty(in interface{}) string {
+func JsonPretty(in interface{}) string {
 	b, err := json.Marshal(in)
 	if err != nil {
 		return err.Error()

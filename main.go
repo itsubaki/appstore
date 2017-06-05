@@ -31,12 +31,16 @@ func main() {
 		cli.StringFlag{
 			Name:  "feed, f",
 			Value: "grossing",
-			Usage: "grossing, free, paid.",
+			Usage: "grossing, free, paid",
 		},
 		cli.StringFlag{
 			Name:  "output, o",
 			Value: "plain",
-			Usage: "plain, json, jsonp",
+			Usage: "plain, json",
+		},
+		cli.BoolFlag{
+			Name:  "pretty, p",
+			Usage: "Print pretty json.",
 		},
 	}
 

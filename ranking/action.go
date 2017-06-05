@@ -24,9 +24,7 @@ func Action(c *cli.Context) {
 
 	switch c.String("output") {
 	case "json":
-		fmt.Println(list.Json())
-	case "jsonp":
-		fmt.Println(list.JsonPretty())
+		fmt.Println(list.Json(c.Bool("pretty")))
 	default:
 		for _, app := range list {
 			fmt.Println(app)

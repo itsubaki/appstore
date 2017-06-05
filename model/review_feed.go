@@ -15,12 +15,8 @@ type ReviewFeed struct {
 
 type ReviewList [](*Review)
 
-func (f *ReviewFeed) Json() string {
-	return util.ToJson(f)
-}
-
-func (f *ReviewFeed) JsonPretty() string {
-	return util.ToJsonPretty(f)
+func (f *ReviewFeed) Json(pretty bool) string {
+	return util.Json(f, pretty)
 }
 
 func (f *ReviewFeed) Stats() string {

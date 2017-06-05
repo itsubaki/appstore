@@ -13,12 +13,8 @@ type AppFeed struct {
 
 type AppList [](*App)
 
-func (l AppList) Json() string {
-	return util.ToJson(l)
-}
-
-func (l AppList) JsonPretty() string {
-	return util.ToJsonPretty(l)
+func (l AppList) Json(pretty bool) string {
+	return util.Json(l, pretty)
 }
 
 func (l AppList) Select(keyword string) AppList {
