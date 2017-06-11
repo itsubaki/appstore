@@ -11,64 +11,6 @@
 $ go get github.com/itsubaki/apst
 ```
 
-## Usage
-
-```console
-apst -h
-NAME:
-   app store command line tool. - A new cli application
-
-USAGE:
-   apst [global options] command [command options] [arguments...]
-
-VERSION:
-   0.0.2
-
-COMMANDS:
-     ranking, r  Show app store ranking
-     review, rv  Show app store review
-     genre, g    Show app genre
-     help, h     Shows a list of commands or help for one command
-
-GLOBAL OPTIONS:
-   --help, -h     show help
-   --version, -v  print the version
-```
-
-```console
-apst ranking -h
-NAME:
-   apst ranking - Show app store ranking
-
-USAGE:
-   apst ranking [command options] [arguments...]
-
-OPTIONS:
-   --limit value, -l value    (default: "30")
-   --genre value, -g value    
-   --country value, -c value  (default: "jp")
-   --feed value, -f value     grossing, free, paid. (default: "grossing")
-   --output value, -o value   plain, json, jsonp (default: "plain")
-```
-
-```console
-apst review -h
-NAME:
-   apst review - Show app store review
-
-USAGE:
-   apst review [command options] [arguments...]
-
-OPTIONS:
-   --limit value, -l value    (default: "30")
-   --genre value, -g value    
-   --country value, -c value  (default: "jp")
-   --feed value, -f value     grossing, free, paid. (default: "grossing")
-   --output value, -o value   plain, json, jsonp (default: "plain")
-   --stats, -s                Show stats.
-```
-
-
 ## Example
 
 ```console
