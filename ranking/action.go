@@ -5,14 +5,13 @@ import (
 
 	"github.com/itsubaki/apst/client"
 	"github.com/itsubaki/apst/model"
-	"github.com/itsubaki/apst/util"
 	"gopkg.in/urfave/cli.v1"
 )
 
 func Action(c *cli.Context) {
 	b := client.Ranking(
-		util.Limit(c.String("limit")),
-		model.GenreID(c.String("genre")),
+		c.String("limit"),
+		c.String("genre"),
 		c.String("feed"),
 		c.String("country"),
 	)

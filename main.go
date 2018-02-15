@@ -5,7 +5,6 @@ import (
 
 	"gopkg.in/urfave/cli.v1"
 
-	"github.com/itsubaki/apst/genre"
 	"github.com/itsubaki/apst/ranking"
 	"github.com/itsubaki/apst/review"
 )
@@ -22,7 +21,8 @@ func main() {
 		},
 		cli.StringFlag{
 			Name:  "genre, g",
-			Value: "",
+			Value: "all",
+			Usage: "all, games",
 		},
 		cli.StringFlag{
 			Name:  "country, c",
@@ -30,8 +30,8 @@ func main() {
 		},
 		cli.StringFlag{
 			Name:  "feed, f",
-			Value: "grossing",
-			Usage: "grossing, free, paid",
+			Value: "top-grossing",
+			Usage: "top-grossing, top-free, top-paid",
 		},
 		cli.StringFlag{
 			Name:  "output, o",
@@ -64,17 +64,9 @@ func main() {
 			}),
 	}
 
-	genre := cli.Command{
-		Name:    "genre",
-		Aliases: []string{"g"},
-		Usage:   "Show app genre",
-		Action:  genre.Action,
-	}
-
 	app.Commands = []cli.Command{
 		rank,
 		review,
-		genre,
 	}
 
 	app.Run(os.Args)

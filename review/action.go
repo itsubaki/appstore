@@ -18,8 +18,8 @@ func Action(c *cli.Context) {
 
 	country := c.String("country")
 	b := client.Ranking(
-		util.Limit(c.String("limit")),
-		model.GenreID(c.String("genre")),
+		c.String("limit"),
+		c.String("genre"),
 		c.String("feed"),
 		country,
 	)

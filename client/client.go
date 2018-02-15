@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"strconv"
 )
 
 // Review output customer reviews
@@ -14,13 +13,8 @@ func Review(id, country string) []byte {
 }
 
 // Ranking output ranking
-func Ranking(limit int, genre, feed, country string) []byte {
-	var slimit = strconv.Itoa(limit)
-	var url = "https://itunes.apple.com/" + country + "/rss/top" + feed + "applications/limit=" + slimit
-	if genre != "" {
-		url = url + "/genre=" + genre
-	}
-	url = url + "/json"
+func Ranking(limit, genre, feed, country string) []byte {
+	var url = "https://rss.itunes.apple.com/api/v1/" + country + "/ios-apps/" + feed + "/" + genre + "/" + limit + "/explicit.json"
 	return get(url)
 }
 

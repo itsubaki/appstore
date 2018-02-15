@@ -46,12 +46,12 @@ func NewAppFeed(b []byte) *AppFeed {
 	}
 
 	feed := content.(map[string]interface{})["feed"]
-	entry := feed.(map[string]interface{})["entry"]
-	entrylist := entry.([]interface{})
+	result := feed.(map[string]interface{})["results"]
+	rlist := result.([]interface{})
 
 	list := AppList{}
-	for i := 0; i < len(entrylist); i++ {
-		app := NewApp(entrylist[i], i+1)
+	for i := 0; i < len(rlist); i++ {
+		app := NewApp(rlist[i], i+1)
 		list = append(list, app)
 	}
 

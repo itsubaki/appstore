@@ -3,7 +3,7 @@ package client
 import "testing"
 
 func TestClientRanking(t *testing.T) {
-	b := Ranking(10, "", "grossing", "jp")
+	b := Ranking("10", "all", "top-grossing", "jp")
 	if b == nil {
 		t.Error("http get failed.")
 	}
