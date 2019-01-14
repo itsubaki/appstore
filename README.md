@@ -1,6 +1,6 @@
-# apst
+# appstore
 
-[![Build Status](https://travis-ci.org/itsubaki/apst.svg?branch=master)](https://travis-ci.org/itsubaki/apst)
+[![Build Status](https://travis-ci.org/itsubaki/appstore.svg?branch=master)](https://travis-ci.org/itsubaki/appstore)
 
 
 - app store command line tool.
@@ -8,13 +8,13 @@
 ## Install
 
 ```console
-$ go get github.com/itsubaki/apst
+$ go get github.com/itsubaki/appstore
 ```
 
 ## Example
 
 ```console
-apst ranking -c us
+appstore ranking -c us
 1: Clash Royale(1053012308) [Supercell]
 2: Netflix(363590051) [Netflix, Inc.]
 3: Candy Crush Saga(553834731) [King]

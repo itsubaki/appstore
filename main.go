@@ -5,13 +5,13 @@ import (
 
 	"gopkg.in/urfave/cli.v1"
 
-	"github.com/itsubaki/apst/ranking"
-	"github.com/itsubaki/apst/review"
+	"github.com/itsubaki/appstore/ranking"
+	"github.com/itsubaki/appstore/review"
 )
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "apst"
+	app.Name = "appstore"
 	app.Usage = "app store command line tool."
 	app.Version = "0.0.3"
 

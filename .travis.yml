@@ -1,11 +1,11 @@
 language: go
 
 install:
-  - go get github.com/itsubaki/apst
+  - go get github.com/itsubaki/appstore
 
 script:
   - go test -v ./...
 
 after_script:
-  - apst ranking -c us
-  - apst review pokemon -c us -s
+  - appstore ranking -c us
+  - appstore review pokemon -c us -s

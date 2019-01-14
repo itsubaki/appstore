@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/itsubaki/apst/client"
-	"github.com/itsubaki/apst/model"
-	"github.com/itsubaki/apst/util"
+	"github.com/itsubaki/appstore/client"
+	"github.com/itsubaki/appstore/model"
+	"github.com/itsubaki/appstore/util"
 	"gopkg.in/urfave/cli.v1"
 )
 

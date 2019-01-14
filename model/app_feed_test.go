@@ -3,7 +3,7 @@ package model
 import (
 	"testing"
 
-	"github.com/itsubaki/apst/client"
+	"github.com/itsubaki/appstore/client"
 )
 
 func TestFeed(t *testing.T) {

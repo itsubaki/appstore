@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/itsubaki/apst/util"
+	"github.com/itsubaki/appstore/util"
 )
 
 type ReviewFeed struct {

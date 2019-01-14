@@ -3,8 +3,8 @@ package ranking
 import (
 	"fmt"
 
-	"github.com/itsubaki/apst/client"
-	"github.com/itsubaki/apst/model"
+	"github.com/itsubaki/appstore/client"
+	"github.com/itsubaki/appstore/model"
 	"gopkg.in/urfave/cli.v1"
 )
 
