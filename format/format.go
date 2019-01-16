@@ -1,10 +1,9 @@
-package util
+package format
 
 import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"strconv"
 )
 
 func Json(in interface{}, pretty bool) string {
@@ -52,16 +51,4 @@ func ColorPrint(rating int, message string) {
 	}
 
 	fmt.Printf(color, message)
-}
-
-func Limit(input string) int {
-	limit, _ := strconv.Atoi(input)
-	if limit > 201 {
-		limit = 200
-	}
-
-	if limit < 2 {
-		limit = 2
-	}
-	return limit
 }

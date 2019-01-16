@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/itsubaki/appstore/util"
+	"github.com/itsubaki/appstore/format"
 )
 
 type ReviewFeed struct {
@@ -16,7 +16,7 @@ type ReviewFeed struct {
 type ReviewList [](*Review)
 
 func (f *ReviewFeed) Json(pretty bool) string {
-	return util.Json(f, pretty)
+	return format.Json(f, pretty)
 }
 
 func (f *ReviewFeed) Stats() string {
