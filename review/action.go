@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/itsubaki/appstore/client"
+	"github.com/itsubaki/appstore/format"
 	"github.com/itsubaki/appstore/model"
-	"github.com/itsubaki/appstore/util"
 	"gopkg.in/urfave/cli.v1"
 )
 
@@ -39,7 +39,7 @@ func Action(c *cli.Context) {
 		default:
 			fmt.Println(app)
 			for _, r := range f.ReviewList {
-				util.ColorPrintln(r.Rating, r.String())
+				format.ColorPrintln(r.Rating, r.String())
 			}
 
 			if c.Bool("stats") {

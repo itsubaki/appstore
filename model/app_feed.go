@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/itsubaki/appstore/util"
+	"github.com/itsubaki/appstore/format"
 )
 
 type AppFeed struct {
@@ -14,7 +14,7 @@ type AppFeed struct {
 type AppList [](*App)
 
 func (l AppList) Json(pretty bool) string {
-	return util.Json(l, pretty)
+	return format.Json(l, pretty)
 }
 
 func (l AppList) Select(keyword string) AppList {
