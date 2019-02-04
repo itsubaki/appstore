@@ -12,7 +12,7 @@ import (
 
 func Action(c *cli.Context) {
 	if len(c.Args()) < 1 {
-		fmt.Println("See: apst review -h")
+		fmt.Println("See: appstore review -h")
 		os.Exit(1)
 	}
 
