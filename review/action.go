@@ -33,7 +33,7 @@ func Action(c *cli.Context) {
 		b := client.Review(app.ID, country)
 		f := model.NewReviewFeed(*app, b)
 
-		switch c.String("output") {
+		switch c.String("format") {
 		case "json":
 			fmt.Println(f.Json(c.Bool("pretty")))
 		default:

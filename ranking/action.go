@@ -21,7 +21,7 @@ func Action(c *cli.Context) {
 		list = list.Select(c.Args().Get(i))
 	}
 
-	switch c.String("output") {
+	switch c.String("format") {
 	case "json":
 		fmt.Println(list.Json(c.Bool("pretty")))
 	default:

@@ -35,7 +35,7 @@ func main() {
 			Usage: "top-grossing, top-free, top-paid",
 		},
 		cli.StringFlag{
-			Name:  "output, o",
+			Name:  "format",
 			Value: "plain",
 			Usage: "plain, json",
 		},
