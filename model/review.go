@@ -13,12 +13,12 @@ type Review struct {
 	Author  string
 }
 
-func (r *Review) String() string {
+func (r Review) String() string {
 	return "[" + strconv.Itoa(r.Rating) + "][" + r.Title + "] " + r.Content + " / " + r.Author
 }
 
-func NewReview(content interface{}) *Review {
-	return &Review{
+func NewReview(content interface{}) Review {
+	return Review{
 		Rating:  rating(content),
 		ID:      rid(content),
 		Content: contents(content),

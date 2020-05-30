@@ -14,7 +14,7 @@ type App struct {
 	Artist   string
 }
 
-func (app *App) String() string {
+func (app App) String() string {
 	rank := strconv.Itoa(app.Rank)
 	id := app.ID
 	appName := app.Name
@@ -23,10 +23,10 @@ func (app *App) String() string {
 	return rank + ": " + appName + "(" + id + ")" + " [" + artist + "]"
 }
 
-func NewApp(content interface{}, rank int) *App {
+func NewApp(content interface{}, rank int) App {
 	m := content.(map[string]interface{})
 
-	return &App{
+	return App{
 		Rank:   rank,
 		Artist: m["artistName"].(string),
 		Name:   m["name"].(string),

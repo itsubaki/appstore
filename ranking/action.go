@@ -5,7 +5,7 @@ import (
 
 	"github.com/itsubaki/appstore/client"
 	"github.com/itsubaki/appstore/model"
-	"gopkg.in/urfave/cli.v1"
+	"github.com/urfave/cli"
 )
 
 func Action(c *cli.Context) {
@@ -23,7 +23,7 @@ func Action(c *cli.Context) {
 
 	switch c.String("format") {
 	case "json":
-		fmt.Println(list.Json(c.Bool("pretty")))
+		fmt.Println(list.JSON(c.Bool("pretty")))
 	default:
 		for _, app := range list {
 			fmt.Println(app)

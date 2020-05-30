@@ -7,7 +7,7 @@ import (
 	"github.com/itsubaki/appstore/client"
 	"github.com/itsubaki/appstore/format"
 	"github.com/itsubaki/appstore/model"
-	"gopkg.in/urfave/cli.v1"
+	"github.com/urfave/cli"
 )
 
 func Action(c *cli.Context) {
@@ -31,11 +31,11 @@ func Action(c *cli.Context) {
 
 	for i, app := range list {
 		b := client.Review(app.ID, country)
-		f := model.NewReviewFeed(*app, b)
+		f := model.NewReviewFeed(app, b)
 
 		switch c.String("format") {
 		case "json":
-			fmt.Println(f.Json(c.Bool("pretty")))
+			fmt.Println(f.JSON(c.Bool("pretty")))
 		default:
 			fmt.Println(app)
 			for _, r := range f.ReviewList {

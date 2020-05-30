@@ -13,10 +13,10 @@ type ReviewFeed struct {
 	ReviewList
 }
 
-type ReviewList [](*Review)
+type ReviewList []Review
 
-func (f *ReviewFeed) Json(pretty bool) string {
-	return format.Json(f, pretty)
+func (f *ReviewFeed) JSON(pretty bool) string {
+	return format.JSON(f, pretty)
 }
 
 func (f *ReviewFeed) Stats() string {

@@ -3,8 +3,7 @@ package main
 import (
 	"os"
 
-	"gopkg.in/urfave/cli.v1"
-
+	"github.com/urfave/cli"
 	"github.com/itsubaki/appstore/ranking"
 	"github.com/itsubaki/appstore/review"
 )

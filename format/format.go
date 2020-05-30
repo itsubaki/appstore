@@ -6,9 +6,9 @@ import (
 	"fmt"
 )
 
-func Json(in interface{}, pretty bool) string {
+func JSON(in interface{}, pretty bool) string {
 	if pretty {
-		return JsonPretty(in)
+		return JSONPretty(in)
 	}
 
 	b, err := json.Marshal(in)
@@ -18,7 +18,7 @@ func Json(in interface{}, pretty bool) string {
 	return string(b)
 }
 
-func JsonPretty(in interface{}) string {
+func JSONPretty(in interface{}) string {
 	b, err := json.Marshal(in)
 	if err != nil {
 		return err.Error()

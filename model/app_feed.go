@@ -11,10 +11,10 @@ type AppFeed struct {
 	AppList
 }
 
-type AppList [](*App)
+type AppList []App
 
-func (l AppList) Json(pretty bool) string {
-	return format.Json(l, pretty)
+func (l AppList) JSON(pretty bool) string {
+	return format.JSON(l, pretty)
 }
 
 func (l AppList) Select(keyword string) AppList {
