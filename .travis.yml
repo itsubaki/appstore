@@ -1,10 +1,10 @@
 language: go
 
 install:
-  - go get github.com/itsubaki/appstore
+  - GO111MODULE=on go get github.com/itsubaki/appstore
 
 script:
-  - go test -v ./...
+  - GO111MODULE=on go test -v ./...
 
 after_script:
   - appstore ranking -c us
