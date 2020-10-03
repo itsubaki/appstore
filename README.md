@@ -2,9 +2,6 @@
 
 [![Build Status](https://travis-ci.org/itsubaki/appstore.svg?branch=master)](https://travis-ci.org/itsubaki/appstore)
 
-
-- app store command line tool.
-
 ## Install
 
 ```console
