@@ -1,9 +1,10 @@
-package model
+package model_test
 
 import (
 	"testing"
 
-	"github.com/itsubaki/appstore/client"
+	"github.com/itsubaki/appstore/pkg/client"
+	"github.com/itsubaki/appstore/pkg/model"
 )
 
 func TestFeed(t *testing.T) {
@@ -12,9 +13,8 @@ func TestFeed(t *testing.T) {
 		t.Error("http get failed.")
 	}
 
-	f := NewAppFeed(b)
+	f := model.NewAppFeed(b)
 	if f == nil {
 		t.Error("feed unmarshal failed.")
 	}
-
 }

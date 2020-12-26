@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/itsubaki/appstore/client"
-	"github.com/itsubaki/appstore/format"
-	"github.com/itsubaki/appstore/model"
+	"github.com/itsubaki/appstore/pkg/client"
+	"github.com/itsubaki/appstore/pkg/format"
+	"github.com/itsubaki/appstore/pkg/model"
 	"github.com/urfave/cli"
 )
 

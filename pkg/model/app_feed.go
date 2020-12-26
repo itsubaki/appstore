@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/itsubaki/appstore/format"
+	"github.com/itsubaki/appstore/pkg/format"
 )
 
 type AppFeed struct {

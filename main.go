@@ -3,9 +3,9 @@ package main
 import (
 	"os"
 
+	"github.com/itsubaki/appstore/pkg/ranking"
+	"github.com/itsubaki/appstore/pkg/review"
 	"github.com/urfave/cli"
-	"github.com/itsubaki/appstore/ranking"
-	"github.com/itsubaki/appstore/review"
 )
 
 func main() {
