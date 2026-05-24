@@ -1,14 +1,12 @@
 # appstore
 
-[![Build Status](https://travis-ci.org/itsubaki/appstore.svg?branch=master)](https://travis-ci.org/itsubaki/appstore)
-
-## Install
+## Installation
 
 ```console
-$ go get github.com/itsubaki/appstore
+$ go install github.com/itsubaki/appstore@latest
 ```
 
-## Example
+## Examples
 
 ```console
 appstore ranking -c us
