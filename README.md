@@ -3,7 +3,7 @@
 ## Installation
 
 ```console
-$ go install github.com/itsubaki/appstore@latest
+go install github.com/itsubaki/appstore@latest
 ```
 
 ## Examples
